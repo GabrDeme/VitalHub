@@ -9,3 +9,9 @@ export const LinkMedium = styled.Text`
     align-self: flex-start;
     margin-left: 20px;
 `
+
+export const LinkBold = styled(LinkMedium)`
+    font-size: 16px;
+    font-family: 'MontserratAlternates_700Bold';
+    color: #4D659D;
+`

@@ -7,3 +7,8 @@ export const Logo = styled.Image`
     align-items: center;
     magin: 20px 0px;
 `
+export const Google = styled(Logo)`
+    height: 20px;
+    width: 20px;
+
+`

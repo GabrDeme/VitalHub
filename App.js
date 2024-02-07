@@ -8,11 +8,14 @@ import { Login } from './src/screens/Login/Login';
 
 const Stack = createNativeStackNavigator();
 
-import { useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_500Medium } from "@expo-google-fonts/montserrat-alternates"
+import { useFonts, Quicksand_500Medium, MontserratAlternates_700Bold, MontserratAlternates_600SemiBold, MontserratAlternates_500Medium } from "@expo-google-fonts/montserrat-alternates"
+import { ForgottenPassword } from './src/screens/ForgottenPassword/ForgottenPassword';
 
 export default function App() {
 
   const [ fontsLoaded, fontsError ] = useFonts({
+    Quicksand_500Medium,
+    MontserratAlternates_700Bold,
     MontserratAlternates_600SemiBold,
     MontserratAlternates_500Medium
   })
@@ -37,6 +40,14 @@ export default function App() {
           name='Login'
           component={Login}
           options={{title: 'Login'}}
+          
+          />
+
+        <Stack.Screen
+        
+          name='ForgottenPassword'
+          component={ForgottenPassword}
+          options={{title: 'Esqueceu a senha'}}
           
           />
           
