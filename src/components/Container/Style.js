@@ -5,3 +5,7 @@ export const Container = styled.SafeAreaView`
     align-items: center;
     background-color: #FAFAFA;
 `
+export const ContainerInput = styled.SafeAreaView`
+    flex-direction: row;
+    gap: 20px;
+`

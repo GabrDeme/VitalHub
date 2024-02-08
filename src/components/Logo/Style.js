@@ -5,10 +5,10 @@ export const Logo = styled.Image`
     width: 214px;
 
     align-items: center;
-    magin: 20px 0px;
+    margin: 20px 0px;
+    margin-top: 50px;
 `
-export const Google = styled(Logo)`
-    height: 20px;
-    width: 20px;
-
+export const Return = styled.Image`
+    height: 100%;
+    width: 100%;
 `

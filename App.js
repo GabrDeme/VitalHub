@@ -4,12 +4,13 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { Navigation } from './src/screens/Navigation/Navigation';
 import { Login } from './src/screens/Login/Login';
-
+import { ForgottenPassword } from './src/screens/ForgottenPassword/ForgottenPassword';
+import { EmailsCode } from './src/screens/EmailsCode/EmailsCode';
+import { NewPassword } from './src/screens/NewPassword/NewPassword';
 
 const Stack = createNativeStackNavigator();
 
 import { useFonts, Quicksand_500Medium, MontserratAlternates_700Bold, MontserratAlternates_600SemiBold, MontserratAlternates_500Medium } from "@expo-google-fonts/montserrat-alternates"
-import { ForgottenPassword } from './src/screens/ForgottenPassword/ForgottenPassword';
 
 export default function App() {
 
@@ -25,7 +26,9 @@ export default function App() {
   }
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{
+        headerShown: false
+      }}>
 
         <Stack.Screen
         
@@ -48,6 +51,22 @@ export default function App() {
           name='ForgottenPassword'
           component={ForgottenPassword}
           options={{title: 'Esqueceu a senha'}}
+          
+          />
+
+        <Stack.Screen
+        
+          name='EmailsCode'
+          component={ EmailsCode }
+          options={{title: 'Codigo do Email'}}
+          
+          />
+
+        <Stack.Screen
+        
+          name='NewPassword'
+          component={ NewPassword }
+          options={{title: 'Redefinir Senha'}}
           
           />
           

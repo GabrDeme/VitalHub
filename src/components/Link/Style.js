@@ -15,3 +15,14 @@ export const LinkBold = styled(LinkMedium)`
     font-family: 'MontserratAlternates_700Bold';
     color: #4D659D;
 `
+
+export const LinkEmail = styled(LinkBold)`
+    font-size: 18px;
+    font-family: 'Quicksand_500Medium';
+`
+export const LinkSemiBold = styled(LinkBold)`
+    align-self: center;
+    justify-content: center;
+    margin-left: 0px;
+    margin-top: 30px;
+`

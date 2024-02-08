@@ -14,3 +14,12 @@ export const Input = styled.TextInput.attrs({
     font-size: 16px;
     font-family: 'MontserratAlternates_600SemiBold';
 `
+export const NumberInput = styled(Input)`
+    height: 62px;
+    width: 62px;
+
+    font-size: 52px;
+    border: 2px solid #77CACF;
+    font-family: 'Quicksand_500Medium';
+    padding: 0px 18px;
+`

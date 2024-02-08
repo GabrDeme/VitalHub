@@ -5,28 +5,29 @@ import { Logo, Return } from "../../components/Logo/Style";
 import { RandomText } from "../../components/Texts/Style";
 import { ButtonTitle, Title } from "../../components/Title/Style";
 
-export const ForgottenPassword = ({ navigation }) => {
+export const NewPassword = ({ navigation }) => {
     return (
         <Container>
 
             <ReturnButton
                 onPress={() => navigation.navigate("Login")}
             >
-                <Return source={require("../../assets/Return.png")} />
+                <Return source={require("../../assets/Close.png")} />
             </ReturnButton>
 
             <Logo source={require("../../assets/PrimaryLogo.png")} />
 
-            <Title>Recuperar Senha</Title>
+            <Title>Redefinir Senha</Title>
 
-            <RandomText>Digite abaixo seu email cadastrado que enviaremos um link para recuperação de senha</RandomText>
+            <RandomText>Insira e confirme a sua nova senha</RandomText>
 
-            <Input placeholder = "Usuário ou E-mail"/>
+            <Input placeholder = "Nova Senha"/>
+            <Input placeholder = "Confirmar Nova Senha"/>
 
             <EnterButton
-                onPress={() => navigation.navigate("EmailsCode")}
+                // onPress={() => navigation.navigate("Home")}
             >
-                <ButtonTitle>Continuar</ButtonTitle>
+                <ButtonTitle>Confirmar Nova Senha</ButtonTitle>
             </EnterButton>
 
         </Container>
