@@ -12,3 +12,7 @@ export const Return = styled.Image`
     height: 100%;
     width: 100%;
 `
+export const PatientPhoto = styled.Image`
+    height: 280px;
+    width: 100%;
+`

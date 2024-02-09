@@ -23,3 +23,8 @@ export const NumberInput = styled(Input)`
     font-family: 'Quicksand_500Medium';
     padding: 0px 18px;
 `
+export const BigInput = styled(Input)`
+    height: 121px;
+    font-size: 16px;
+    text-align-vertical: top;
+`

@@ -7,6 +7,8 @@ import { Login } from './src/screens/Login/Login';
 import { ForgottenPassword } from './src/screens/ForgottenPassword/ForgottenPassword';
 import { EmailsCode } from './src/screens/EmailsCode/EmailsCode';
 import { NewPassword } from './src/screens/NewPassword/NewPassword';
+import { Register } from './src/screens/Register/Register';
+import { Record } from './src/screens/Record/Record';
 
 const Stack = createNativeStackNavigator();
 
@@ -67,6 +69,22 @@ export default function App() {
           name='NewPassword'
           component={ NewPassword }
           options={{title: 'Redefinir Senha'}}
+          
+          />
+
+        <Stack.Screen
+        
+          name='Register'
+          component={ Register }
+          options={{title: 'Cadastrar Conta'}}
+          
+          />
+
+        <Stack.Screen
+        
+          name='Record'
+          component={ Record }
+          options={{title: 'Prontuário Médico'}}
           
           />
           

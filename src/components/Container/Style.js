@@ -9,3 +9,7 @@ export const ContainerInput = styled.SafeAreaView`
     flex-direction: row;
     gap: 20px;
 `
+export const ContainerInfo = styled.SafeAreaView`
+    flex-direction: row;
+
+`

@@ -7,12 +7,19 @@ export const Title = styled.Text`
     margin-bottom: 5px;
 `
 
-export const ButtonTitle = styled(Title)`
+export const SubTitle = styled(Title)`
+    font-size: 16px;
+    margin-bottom: -5px;
+    margin-top: 20px;
+`
+
+export const ButtonTitle = styled.Text`
     font-size: 16px;
     color: white;
-    text-align: center;
     font-family: 'MontserratAlternates_700Bold';
+    text-align: center;
     text-transform: uppercase;
+    margin-bottom: 5px;
 `
 
 export const ButtonTitleGoogle = styled(ButtonTitle)`

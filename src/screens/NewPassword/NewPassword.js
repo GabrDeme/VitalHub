@@ -30,6 +30,8 @@ export const NewPassword = ({ navigation }) => {
                 <ButtonTitle>Confirmar Nova Senha</ButtonTitle>
             </EnterButton>
 
+            <LinkSemiBold>Reenviar Código</LinkSemiBold>
+
         </Container>
     );
 }

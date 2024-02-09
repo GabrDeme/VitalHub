@@ -8,3 +8,9 @@ export const RandomText = styled.Text`
     margin: 20px 20px;
     width: 90%;
 `
+
+export const RandomInfo = styled(RandomText)`
+    font-size: 14px;
+    margin: 0px;
+    width: 40%
+`
