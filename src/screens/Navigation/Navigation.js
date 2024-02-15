@@ -21,10 +21,15 @@ export const Navigation = ({navigation}) => {
                 onPress={() => navigation.navigate("Record")}
             />
 
-            {/* <Button
+            <Button
                 title="Profile"
                 onPress={() => navigation.navigate("Profile")}
-            /> */}
+            />
+
+            <Button
+                title="Home"
+                onPress={() => navigation.navigate("Home")}
+            />
 
         </View>
     );

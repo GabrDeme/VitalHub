@@ -5,12 +5,17 @@ import { LinkSemiBold } from "../../components/Link/Style";
 import { PatientPhoto } from "../../components/Logo/Style";
 import { RandomInfo } from "../../components/Texts/Style";
 import { SubTitle, Title } from "../../components/Title/Style";
+import { StatusBar } from "expo-status-bar";
 
 export const Record = ({ navigation }) => {
     return (
         <ScrollView>
+
+            <StatusBar />
+
             <Container>
-                <PatientPhoto source={require("../../assets/perfection.jpg")} />
+                <PatientPhoto source={require("../../assets/PatientPhoto.png")} />
+
                 <Title>Nome do Invíduo</Title>
 
                 <ContainerInfo>

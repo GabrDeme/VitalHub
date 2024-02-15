@@ -13,6 +13,8 @@ import { Record } from './src/screens/Record/Record';
 const Stack = createNativeStackNavigator();
 
 import { useFonts, Quicksand_500Medium, MontserratAlternates_700Bold, MontserratAlternates_600SemiBold, MontserratAlternates_500Medium } from "@expo-google-fonts/montserrat-alternates"
+import { Profile } from './src/screens/Profile/Profile';
+import { Home } from './src/screens/Home/Home';
 
 export default function App() {
 
@@ -85,6 +87,22 @@ export default function App() {
           name='Record'
           component={ Record }
           options={{title: 'Prontuário Médico'}}
+          
+          />
+
+        <Stack.Screen
+        
+          name='Profile'
+          component={ Profile }
+          options={{title: 'Perfil do Paciente'}}
+          
+          />
+
+        <Stack.Screen
+        
+          name='Home'
+          component={ Home }
+          options={{title: 'Home'}}
           
           />
           

@@ -11,6 +11,8 @@ export const SubTitle = styled(Title)`
     font-size: 16px;
     margin-bottom: -5px;
     margin-top: 20px;
+    margin-left: 25px;
+    align-self: flex-start;
 `
 
 export const ButtonTitle = styled.Text`

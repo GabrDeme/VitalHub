@@ -13,6 +13,6 @@ export const Return = styled.Image`
     width: 100%;
 `
 export const PatientPhoto = styled.Image`
-    height: 280px;
+    height: 300px;
     width: 100%;
 `

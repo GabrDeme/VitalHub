@@ -25,6 +25,7 @@ export const LinkSemiBold = styled(LinkBold)`
     justify-content: center;
     margin-left: 0px;
     margin-top: 30px;
+    margin-bottom: 30px;
 `
 export const LinkCancel = styled(LinkSemiBold)`
     margin-bottom: 30px;
