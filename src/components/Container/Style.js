@@ -25,3 +25,21 @@ export const ContainerHeader = styled(LinearGradient).attrs({
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 `
+export const BoxUser = styled.SafeAreaView`
+    width: 163px;
+    height: 60px;
+    flex-direction: row;
+    align-self: flex-start;
+    margin-left: 20px; 
+`
+export const DataUser = styled.SafeAreaView`
+    z-index: 10;
+    position: absolute;
+    justify-content: center;
+    margin-top: 60px;
+    margin-left: 65px;
+`
+export const ContainerAlter = styled.SafeAreaView`
+
+    flex-direction: row;
+`

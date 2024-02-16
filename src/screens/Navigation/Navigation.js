@@ -11,10 +11,10 @@ export const Navigation = ({navigation}) => {
                 onPress={() => navigation.navigate("Login")}
             />
 
-            {/* <Button
+            <Button
                 title="Schedule"
-                onPress={() => navigation.navigate("Schedule")}
-            /> */}
+                onPress={() => navigation.navigate("DoctorSchedule")}
+            />
 
             <Button
                 title="Record"
@@ -26,10 +26,10 @@ export const Navigation = ({navigation}) => {
                 onPress={() => navigation.navigate("Profile")}
             />
 
-            <Button
+            {/* <Button
                 title="Home"
                 onPress={() => navigation.navigate("Home")}
-            />
+            /> */}
 
         </View>
     );

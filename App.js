@@ -9,12 +9,13 @@ import { EmailsCode } from './src/screens/EmailsCode/EmailsCode';
 import { NewPassword } from './src/screens/NewPassword/NewPassword';
 import { Register } from './src/screens/Register/Register';
 import { Record } from './src/screens/Record/Record';
+import { Profile } from './src/screens/Profile/Profile';
+import { DoctorSchedule } from './src/screens/DoctorSchedule/DoctorSchedule';
 
 const Stack = createNativeStackNavigator();
 
 import { useFonts, Quicksand_500Medium, MontserratAlternates_700Bold, MontserratAlternates_600SemiBold, MontserratAlternates_500Medium } from "@expo-google-fonts/montserrat-alternates"
-import { Profile } from './src/screens/Profile/Profile';
-import { Home } from './src/screens/Home/Home';
+
 
 export default function App() {
 
@@ -100,9 +101,9 @@ export default function App() {
 
         <Stack.Screen
         
-          name='Home'
-          component={ Home }
-          options={{title: 'Home'}}
+          name='DoctorSchedule'
+          component={ DoctorSchedule }
+          options={{title: 'Consultas'}}
           
           />
           

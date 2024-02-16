@@ -28,3 +28,11 @@ export const BigInput = styled(Input)`
     font-size: 16px;
     text-align-vertical: top;
 `
+export const DataInput = styled(Input).attrs({
+    placeholderTextColor: '#33303E'
+})`
+    border: 0px solid #33303E;
+    background-color: #F5F3F3;
+    color: #33303E;
+    font-family: 'MontserratAlternates_500Medium';
+`

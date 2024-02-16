@@ -1,21 +1,26 @@
-import { ContainerHeader } from "../Container/Style";
+import { StatusBar } from "react-native";
+import { BoxUser, ContainerHeader, DataUser } from "../Container/Style";
+import { SmallPatientPhoto } from "../Logo/Style";
+import { UserName, WelcomeTitle } from "../Title/Style";
 
 export const Header = () => {
     return (
         <ContainerHeader>
 
-            {/* <BoxUser>
+            <StatusBar />
 
-                <ImageUser />
+            <BoxUser>
+
+                <SmallPatientPhoto source={require("../../assets/PatientPhoto.png")} />
 
                 <DataUser>
-                    <TextDefault>Bem vindo</TextDefault>
-                    <NomeUser>Dr. Claudio</NomeUser>
-                </DataUser>
+                    <WelcomeTitle>Bem vindo</WelcomeTitle>
+                    <UserName>Dr. Carlos</UserName>
+                </DataUser> 
 
             </BoxUser>
 
-            <MaterialIcons /> */}
+            {/* <MaterialIcons name="notifications" size={25} color="white"/> */}
 
         </ContainerHeader>
     );
