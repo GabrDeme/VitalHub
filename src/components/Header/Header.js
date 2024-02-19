@@ -1,5 +1,5 @@
 import { StatusBar } from "react-native";
-import { BoxUser, ContainerHeader, DataUser } from "../Container/Style";
+import { ContainerBoxUser, ContainerHeader, ContainerDataUser } from "../Container/Style";
 import { SmallPatientPhoto } from "../Logo/Style";
 import { UserName, WelcomeTitle } from "../Title/Style";
 
@@ -9,16 +9,16 @@ export const Header = () => {
 
             <StatusBar />
 
-            <BoxUser>
+            <ContainerBoxUser>
 
                 <SmallPatientPhoto source={require("../../assets/PatientPhoto.png")} />
 
-                <DataUser>
+                <ContainerDataUser>
                     <WelcomeTitle>Bem vindo</WelcomeTitle>
                     <UserName>Dr. Carlos</UserName>
-                </DataUser> 
+                </ContainerDataUser> 
 
-            </BoxUser>
+            </ContainerBoxUser>
 
             {/* <MaterialIcons name="notifications" size={25} color="white"/> */}
 

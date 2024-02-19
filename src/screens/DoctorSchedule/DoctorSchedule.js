@@ -2,10 +2,24 @@ import { ScrollView } from "react-native";
 import { Header } from "../../components/Header/Header";
 import { Container, ContainerAlter } from "../../components/Container/Style";
 import CalendarList from "../../components/Calendar/Calendar";
-import { AlterButton } from "../../components/Button/Style";
-import { ButtonTitle } from "../../components/Title/Style";
+
+import { useState } from "react";
+import { AlterButton } from "../../components/AlterButton/AlterButton";
+
+
+const Consultas = [
+    { id: 1, nome: "Eduardo", situacao: "pendente" },
+    { id: 2, nome: "Gustavo", situacao: "realizado" },
+    { id: 3, nome: "Marcelo", situacao: "cancelado" },
+    { id: 4, nome: "Marcio", situacao: "cancelado" },
+    { id: 5, nome: "Jao", situacao: "realizado" },
+    { id: 6, nome: "Gabriel", situacao: "pendente" }
+]
 
 export const DoctorSchedule = ({ navigation }) => {
+
+    const [statusList, setStatusList] = useState("pendente")
+
     return (
         <ScrollView>
             <Container>
@@ -13,14 +27,21 @@ export const DoctorSchedule = ({ navigation }) => {
                 <CalendarList />
 
                 <ContainerAlter>
-                    <AlterButton>
-                        <ButtonTitle>Agendadas</ButtonTitle>
+                    <AlterButton
+                        textButton={'Pendente'}
+                        clickButton={statusList === 'pendente'}
+                        onPress={() => setStatusList('pendente')}
+                    >
                     </AlterButton>
-                    <AlterButton>
-                        <ButtonTitle>Realizadas</ButtonTitle>
+                    <AlterButton
+                        textButton={'Realizadas'}
+                        clickButton={statusList === 'realizadas'}
+                        onPress={() => setStatusList('realizadas')}>
                     </AlterButton>
-                    <AlterButton>
-                        <ButtonTitle>Canceladas</ButtonTitle>
+                    <AlterButton
+                        textButton={'Canceladas'}
+                        clickButton={statusList === 'canceladas'}
+                        onPress={() => setStatusList('canceladas')}>
                     </AlterButton>
                 </ContainerAlter>
             </Container>

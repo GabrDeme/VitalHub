@@ -26,8 +26,3 @@ export const ReturnButton = styled.TouchableOpacity`
     align-self: flex-start;
     margin-left: 15px;
 `
-export const AlterButton = styled(GoogleButton)`
-    height: 39px;
-    width: 100px;
-    margin-top: 5px;
-`

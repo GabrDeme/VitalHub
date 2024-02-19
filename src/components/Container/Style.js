@@ -25,21 +25,23 @@ export const ContainerHeader = styled(LinearGradient).attrs({
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 `
-export const BoxUser = styled.SafeAreaView`
+export const ContainerBoxUser = styled.SafeAreaView`
     width: 163px;
     height: 60px;
     flex-direction: row;
     align-self: flex-start;
     margin-left: 20px; 
 `
-export const DataUser = styled.SafeAreaView`
+export const ContainerDataUser = styled.SafeAreaView`
     z-index: 10;
     position: absolute;
     justify-content: center;
     margin-top: 60px;
     margin-left: 65px;
 `
-export const ContainerAlter = styled.SafeAreaView`
-
+export const ContainerAlter = styled.View`
     flex-direction: row;
+    justify-content: space-between;
+    width: 92%;
+    margin-top: 38px;
 `
