@@ -2,10 +2,11 @@ import { ScrollView } from "react-native";
 import { Header } from "../../components/Header/Header";
 import { Container, ContainerAlter } from "../../components/Container/Style";
 import CalendarList from "../../components/Calendar/Calendar";
+import { AlterButton } from "../../components/AlterButton/AlterButton";
+import { ListComponent } from "../../components/List/List";
+import { AppointmentCard } from "../../components/AppointmentCard/AppointmentCard";
 
 import { useState } from "react";
-import { AlterButton } from "../../components/AlterButton/AlterButton";
-
 
 const Consultas = [
     { id: 1, nome: "Eduardo", situacao: "pendente" },
@@ -44,6 +45,20 @@ export const DoctorSchedule = ({ navigation }) => {
                         onPress={() => setStatusList('canceladas')}>
                     </AlterButton>
                 </ContainerAlter>
+
+                <ListComponent
+                    data={Consultas}
+                    keyExtractor={(item) => item.id}
+
+                    renderItem={({item}) =>
+                        statusList == item.situacao && (
+                            <AppointmentCard
+                                situacao={item.situacao}
+                            />
+                        )
+                    }
+                />             
+
             </Container>
         </ScrollView>
     );

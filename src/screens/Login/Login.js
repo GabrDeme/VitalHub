@@ -14,18 +14,20 @@ export const Login = ({ navigation }) => {
 
             <Title>Entrar ou criar conta</Title>
 
-            <Input placeholder = "Usuário ou E-mail"/>
-            <Input placeholder = "Senha"/>
+            <Input placeholder="Usuário ou E-mail" />
+            <Input placeholder="Senha" />
 
             <LinkMedium
-                
+
                 title="ForgottenPassword"
                 onPress={() => navigation.navigate("ForgottenPassword")}
-            
+
             >Esqueceu sua senha?</LinkMedium>
 
             <EnterButton>
-                <ButtonTitle>Entrar</ButtonTitle>
+                <ButtonTitle
+                    onPress={() => navigation.navigate("DoctorSchedule")}
+                >Entrar</ButtonTitle>
             </EnterButton>
 
             <GoogleButton>

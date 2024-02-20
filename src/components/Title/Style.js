@@ -26,14 +26,3 @@ export const ButtonTitleGoogle = styled(ButtonTitle)`
     color: #496BBA;
     justify-content: center;
 `
-export const WelcomeTitle = styled.Text`
-    font-size: 14px;
-    color: #4E4B59;
-    font-family: 'Quicksand_500Medium';
-    align-self: flex-start;
-`
-export const UserName = styled(Title)`
-    font-size: 16px;
-    color: #fbfbfb;
-    margin-bottom: 35px;
-`

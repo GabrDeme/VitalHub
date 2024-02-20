@@ -1,6 +1,7 @@
 import { EnterButton, ReturnButton } from "../../components/Button/Style";
 import { Container } from "../../components/Container/Style";
 import { Input } from "../../components/Input/Style";
+import { LinkSemiBold } from "../../components/Link/Style";
 import { Logo, Return } from "../../components/Logo/Style";
 import { RandomText } from "../../components/Texts/Style";
 import { ButtonTitle, Title } from "../../components/Title/Style";
@@ -25,7 +26,7 @@ export const NewPassword = ({ navigation }) => {
             <Input placeholder = "Confirmar Nova Senha"/>
 
             <EnterButton
-                // onPress={() => navigation.navigate("Home")}
+                onPress={() => navigation.navigate("Login")}
             >
                 <ButtonTitle>Confirmar Nova Senha</ButtonTitle>
             </EnterButton>

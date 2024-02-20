@@ -21,7 +21,7 @@ export const Register = ({ navigation }) => {
             <Input placeholder = "Confirmar Nova Senha"/>
 
             <EnterButton
-                // onPress={() => navigation.navigate("Home")}
+                onPress={() => navigation.navigate("DoctorSchedule")}
             >
                 <ButtonTitle>Cadastrar</ButtonTitle>
             </EnterButton>

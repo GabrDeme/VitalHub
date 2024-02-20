@@ -1,4 +1,4 @@
-import { AlterButton1, AlterButtonTitle } from "./Style"
+import { SwitchButton, AlterButtonTitle } from "./Style"
 
 export const AlterButton = ( {
     textButton,
@@ -6,9 +6,9 @@ export const AlterButton = ( {
     onPress,
 }) => { return (
 
-        <AlterButton1 clickButton={clickButton} onPress={onPress}>
+        <SwitchButton clickButton={clickButton} onPress={onPress}>
             <AlterButtonTitle clickButton={clickButton}>{textButton}</AlterButtonTitle>
-        </AlterButton1>
+        </SwitchButton>
 
 );
 
