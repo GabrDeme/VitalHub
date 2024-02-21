@@ -46,5 +46,6 @@ export const UserName = styled.Text`
 export const Bell = styled.Image`
     height: 25px;
     width: 25px;
-    margin-top: 50px
+    margin-top: 10px;
+    margin-left: 340px;
 `

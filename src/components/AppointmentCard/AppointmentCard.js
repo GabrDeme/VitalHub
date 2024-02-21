@@ -2,9 +2,13 @@ import { ButtonCard, ButtonText, ClockCard, ContainerList, ContentCard, DataProf
 import { AntDesign } from '@expo/vector-icons';
 
 export const AppointmentCard = ({
-    situacao = "pendente",
+    situation = "pendente",
     onPressCancel,
     onPressAppointment,
+    name, 
+    age,
+    hour,
+    type
 }) => {
     return (
         <ContainerList>
@@ -14,32 +18,32 @@ export const AppointmentCard = ({
             <ContentCard>
                 <DataProfileCard>
 
-                    <ProfileName>João</ProfileName>
+                    <ProfileName>{name}</ProfileName>
 
                     <ProfileData>
-                        <TextAge>45</TextAge>
-                        <TextBold>Rotina</TextBold>
+                        <TextAge>{age} anos</TextAge>
+                        <TextBold>{type}</TextBold>
                     </ProfileData>
 
                 </DataProfileCard>
 
                 <ViewRow>
-                    <ClockCard situacao={situacao}>
-                        <AntDesign name="clockcircle" size={14} color="black" />
-                        <TextBold>14:00</TextBold>
+                    <ClockCard situation={situation}>
+                        <AntDesign name="clockcircle" size={14} marginTop={2} color= {situation == "pendente" ? "#49B3BA" : "#4E4B59"}/>
+                        <TextBold>{hour}</TextBold>
                     </ClockCard>
 
                     {
-                        situacao == "cancelado" ? (
+                        situation == "canceladas" ? (
                             <>
                             </>
-                        ) : situacao == "pendente" ? (
+                        ) : situation == "pendente" ? (
                             <ButtonCard onPress={onPressCancel}>
-                                <ButtonText situacao={situacao}>Cancelar</ButtonText>
+                                <ButtonText situation={situation}>Cancelar</ButtonText>
                             </ButtonCard>
                         ) : (
                             <ButtonCard onPress={onPressAppointment}>
-                                <ButtonText situacao={situacao}>Cancelar</ButtonText>
+                                <ButtonText situation={situation}>Ver Prontuário</ButtonText>
                             </ButtonCard>
                         ) 
                     }

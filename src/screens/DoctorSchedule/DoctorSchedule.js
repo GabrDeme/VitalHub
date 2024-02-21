@@ -9,17 +9,19 @@ import { AppointmentCard } from "../../components/AppointmentCard/AppointmentCar
 import { useState } from "react";
 
 const Consultas = [
-    { id: 1, nome: "Eduardo", situacao: "pendente" },
-    { id: 2, nome: "Gustavo", situacao: "realizado" },
-    { id: 3, nome: "Marcelo", situacao: "cancelado" },
-    { id: 4, nome: "Marcio", situacao: "cancelado" },
-    { id: 5, nome: "Jao", situacao: "realizado" },
-    { id: 6, nome: "Gabriel", situacao: "pendente" }
+    { id: 1, name: "Eduardo", age: 18, hour: '12:00', situation: "pendente", type: "Rotina"},
+    { id: 2, name: "Gustavo", age: 18, hour: '12:30', situation: "realizadas", type: "Rotina"},
+    { id: 3, name: "Marcelo", age: 19, hour: '13:00', situation: "canceladas", type: "Urgência"},
+    { id: 4, name: "Marcio", age: 29, hour: '14:00', situation: "pendente", type: "Rotina"},
+    { id: 5, name: "Jao", age: 19, hour: '18:00', situation: "realizadas", type: "Urgência"},
+    { id: 6, name: "Gabriel", age: 16, hour: '13:30', situation: "pendente", type: "Rotina"}
 ]
 
 export const DoctorSchedule = ({ navigation }) => {
 
     const [statusList, setStatusList] = useState("pendente")
+    const [showModalCancel, setShowModalCancel] = useState(false)
+    const [showModalAppointment, setShowModalAppointment] = useState(false)
 
     return (
         <ScrollView>
@@ -51,9 +53,15 @@ export const DoctorSchedule = ({ navigation }) => {
                     keyExtractor={(item) => item.id}
 
                     renderItem={({item}) =>
-                        statusList == item.situacao && (
+                        statusList == item.situation && (
                             <AppointmentCard
-                                situacao={item.situacao}
+                            name={item.name}
+                            age={item.age}
+                            hour={item.hour}
+                            situation={item.situation}
+                            type={item.type}
+                            onPressCancel={() => setShowModalCancel(true)}
+                            onPressAppointment={() => setShowModalAppointment(true)}
                             />
                         )
                     }

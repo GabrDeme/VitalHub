@@ -9,17 +9,15 @@ export const Header = () => {
 
             <ContainerBoxUser>
 
-                <SmallPatientPhoto source={{ uri: "https://github.com/GustavoPasqualetti" }}/>
+                <SmallPatientPhoto source={{ uri: "https://github.com/GustavoPasqualetti.png" }} />
 
                 <ContainerDataUser>
                     <WelcomeTitle>Bem vindo</WelcomeTitle>
                     <UserName>Dr. Francisco</UserName>
                 </ContainerDataUser>
-
-                <Bell source={require("../../assets/Bell.png")} />
-
+                
             </ContainerBoxUser>
-
+            <Bell source={require("../../assets/Bell.png")} />
 
 
         </ContainerHeader>
