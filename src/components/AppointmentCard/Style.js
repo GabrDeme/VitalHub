@@ -36,11 +36,11 @@ export const ProfileData = styled.View`
 export const TextAge = styled.Text`
     font-size: 14px;
     color: #8c8a97;
-    font-family: Quicksand_400Regular;
+    font-family: 'Quicksand_400Regular';
 `
 export const TextBold = styled(TextAge)`
-    font-family: Quicksand_600SemiBold;
-    color: ${(props) => props.situation == "pendente" ? "#49B3BA" : "#4E4B59"}
+    font-family: 'Quicksand_600SemiBold';
+    color: ${(props) => props.situation == "pendente" ? "#49B3BA" : "#4E4B59"};
 `
 export const ViewRow = styled.View`
     width: 100%;
@@ -59,11 +59,9 @@ export const ClockCard = styled.View`
 export const AntDesign = styled.Image`
 `
 export const ButtonCard = styled.TouchableOpacity`
-
 `
 export const ButtonText = styled.Text`
-    font-family: MontserratAlternates_500Medium;
+    font-family: 'MontserratAlternates_500Medium';
     font-size: 12px;
-    color: #c81d25;
-    background-color: ${(props) => props.situation == "pendente" ? "#fff" : "344f8f"}
+    color: ${(props) => props.situation == "pendente" ? "#c81d25" : "#344f8f"};
 `

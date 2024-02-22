@@ -13,7 +13,7 @@ export const AppointmentCard = ({
     return (
         <ContainerList>
 
-            <ProfileImage source={{ uri: "https://github.com/ojuaum1.png" }} />
+            <ProfileImage source={{ uri: "https://github.com/EduardoPasqualetti.png" }} />
 
             <ContentCard>
                 <DataProfileCard>

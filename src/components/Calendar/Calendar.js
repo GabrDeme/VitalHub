@@ -10,7 +10,7 @@ import { StyledCalendarStrip } from './Style';
 import { useFonts, MontserratAlternates_600SemiBold } from '@expo-google-fonts/montserrat-alternates';
 
 //component CalendarList
-const CalendarList = () => {
+export const CalendarList = () => {
 
   //hook useFonts
   const [fontsLoaded, fontsError] = useFonts({
