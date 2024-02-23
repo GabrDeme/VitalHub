@@ -38,7 +38,7 @@ export const TextAge2 = styled.Text`
     color: #8c8a97;
     font-family: 'Quicksand_400Regular';
 `
-export const TextBold2 = styled(TextAge)`
+export const TextBold2 = styled(TextAge2)`
     font-family: 'Quicksand_600SemiBold';
     color: ${(props) => props.situation == "pendente" ? "#49B3BA" : "#4E4B59"};
 `

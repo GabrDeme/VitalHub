@@ -1,12 +1,13 @@
 import { ScrollView } from "react-native";
 import { Header } from "../../components/Header/Header";
-import { Container, ContainerAlter } from "../../components/Container/Style";
+import { Container, ContainerAlter, Stethoscope } from "../../components/Container/Style";
 import { CalendarList } from "../../components/Calendar/Calendar";
 import { AlterButton } from "../../components/AlterButton/AlterButton";
 import { ListComponent } from "../../components/List/List";
 import { PatientAppointmentCard } from "../../components/AppointmentCard/PatientAppointmentCard/PatientAppointmentCard";
 import { CancellationModal } from "../../components/Modal/CancellationModal/CancellationModal";
 import { AppointmentModal } from "../../components/Modal/AppointmentModal/AppointmentModal";
+import { FontAwesome6 } from '@expo/vector-icons';
 
 import { useState } from "react";
 
@@ -48,23 +49,23 @@ export const PatientSchedule = ({ navigation }) => {
             </ContainerAlter>
 
             <ListComponent
-                    data={ConsultasPaciente}
-                    keyExtractor={(item) => item.id}
+                data={ConsultasPaciente}
+                keyExtractor={(item) => item.id}
 
-                    renderItem={({ item }) =>
-                        statusList == item.situation && (
-                            <PatientAppointmentCard
-                                name={item.name}
-                                age={item.age}
-                                hour={item.hour}
-                                situation={item.situation}
-                                type={item.type}
-                                onPressCancel={() => setShowModalCancel(true)}
-                                onPressAppointment={() => setShowModalAppointment(true)}
-                            />
-                        )
-                    }
-                />
+                renderItem={({ item }) =>
+                    statusList == item.situation && (
+                        <PatientAppointmentCard
+                            name={item.name}
+                            age={item.age}
+                            hour={item.hour}
+                            situation={item.situation}
+                            type={item.type}
+                            onPressCancel={() => setShowModalCancel(true)}
+                            onPressAppointment={() => setShowModalAppointment(true)}
+                        />
+                    )
+                }
+            />
 
             <CancellationModal
                 visible={showModalCancel}
@@ -75,6 +76,10 @@ export const PatientSchedule = ({ navigation }) => {
                 setShowModalAppointment={setShowModalAppointment}
                 navigation={navigation}
             />
+
+            <Stethoscope>
+                <FontAwesome6 name="stethoscope" size={32} color="white" />
+            </Stethoscope>
 
         </Container>
 

@@ -20,3 +20,14 @@ export const ContainerAlter = styled.View`
     width: 92%;
     margin-top: 38px;
 `
+export const Stethoscope = styled.View`
+    height: 60px;
+    width: 60px;
+    align-self: flex-end;
+    margin-bottom: 14px;
+    margin-right: 21px;
+    background-color: #49B3BA;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+`

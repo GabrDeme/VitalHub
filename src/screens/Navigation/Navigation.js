@@ -18,7 +18,7 @@ export const Navigation = ({navigation}) => {
             
             <Button
                 title="Paciente"
-                onPress={() => navigation.navigate("PatientSchedule")}
+                onPress={() => {navigation.navigate("PatientSchedule")}}
             />
 
             <Button

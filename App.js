@@ -11,6 +11,7 @@ import { Register } from './src/screens/Register/Register';
 import { Record } from './src/screens/Record/Record';
 import { Profile } from './src/screens/Profile/Profile';
 import { DoctorSchedule } from './src/screens/DoctorSchedule/DoctorSchedule';
+import { PatientSchedule } from './src/screens/PatientSchedule/PatientSchedule';
 
 const Stack = createNativeStackNavigator();
 
@@ -103,7 +104,15 @@ export default function App() {
         
           name='DoctorSchedule'
           component={ DoctorSchedule }
-          options={{title: 'Consultas'}}
+          options={{title: 'ConsultasMedico'}}
+          
+          />
+
+        <Stack.Screen
+        
+          name='PatientSchedule'
+          component={ PatientSchedule }
+          options={{title: 'ConsultasPaciente'}}
           
           />
           
