@@ -8,6 +8,11 @@ export const EnterButton = styled.TouchableOpacity`
     border-radius: 5px;
     background-color: #496BBA;
 `
+export const ExitButton = styled(EnterButton)`
+    background-color: #ACABB7;
+    width: 50%;
+    margin-bottom: 30px;
+`
 export const GoogleButton = styled(EnterButton)`
     flex-direction: row;
     border: 2px solid #496BBA;

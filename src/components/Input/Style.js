@@ -14,6 +14,7 @@ export const Input = styled.TextInput.attrs({
     font-size: 16px;
     font-family: 'MontserratAlternates_600SemiBold';
 `
+
 export const NumberInput = styled(Input)`
     height: 62px;
     width: 62px;
@@ -35,4 +36,7 @@ export const DataInput = styled(Input).attrs({
     background-color: #F5F3F3;
     color: #33303E;
     font-family: 'MontserratAlternates_500Medium';
+`
+export const LowerDataInput = styled(DataInput)`
+    width: 35%;
 `

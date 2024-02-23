@@ -3,9 +3,9 @@ import { ButtonTitle, Title } from "../../Title/Style";
 import { AnotherPatientPhoto } from "../../Logo/Style";
 import { ButtonModal, CancellationButton, CancellationButtonTitle, ModalContent, ModalText, PatientModal } from "./Style";
 
-export const AppointmentCard = ({
+export const AppointmentModal = ({
     visible, 
-    setShowModalCancel, 
+    setShowModalAppointment, 
     name, 
     age,
     ...rest
@@ -26,7 +26,7 @@ export const AppointmentCard = ({
                         <ButtonTitle>Inserir Prontuário</ButtonTitle>
                     </ButtonModal>
 
-                    <CancellationButton onPress={() => setShowModalAppointmentl(false)}>
+                    <CancellationButton onPress={() => setShowModalAppointment(false)}>
                         <CancellationButtonTitle>Cancelar</CancellationButtonTitle>
                     </CancellationButton>
                 </ModalContent>

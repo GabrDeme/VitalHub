@@ -9,7 +9,7 @@ export const Header = () => {
 
             <ContainerBoxUser>
 
-                <SmallPatientPhoto source={{ uri: "https://github.com/GustavoPasqualetti.png" }} />
+                <SmallPatientPhoto source={{ uri: "https://github.com/EduardoPasqualetti.png" }} />
 
                 <ContainerDataUser>
                     <WelcomeTitle>Bem vindo</WelcomeTitle>

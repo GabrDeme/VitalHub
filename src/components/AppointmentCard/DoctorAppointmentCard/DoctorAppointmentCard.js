@@ -1,7 +1,7 @@
-import { ButtonCard, ButtonText, ClockCard, ContainerList, ContentCard, DataProfileCard, ProfileData, ProfileImage, ProfileName, TextAge, TextBold, ViewRow } from "./Style";
+import { ButtonCard, ButtonText, ClockCard, ContainerList, ContentCard, DataProfileCard, ProfileData, ProfileImage, ProfileName, TextAge, TextBold, ViewRow } from './Style';
 import { AntDesign } from '@expo/vector-icons';
 
-export const AppointmentCard = ({
+export const DoctorAppointmentCard = ({
     situation = "pendente",
     onPressCancel,
     onPressAppointment,
@@ -13,7 +13,7 @@ export const AppointmentCard = ({
     return (
         <ContainerList>
 
-            <ProfileImage source={{ uri: "https://github.com/EduardoPasqualetti.png" }} />
+            <ProfileImage source={{ uri: "https://github.com/GustavoPasqualetti.png" }} />
 
             <ContentCard>
                 <DataProfileCard>

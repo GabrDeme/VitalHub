@@ -4,23 +4,19 @@ import { Container, ContainerAlter } from "../../components/Container/Style";
 import { CalendarList } from "../../components/Calendar/Calendar";
 import { AlterButton } from "../../components/AlterButton/AlterButton";
 import { ListComponent } from "../../components/List/List";
-import { DoctorAppointmentCard } from "../../components/AppointmentCard/DoctorAppointmentCard/DoctorAppointmentCard";
+import { PatientAppointmentCard } from "../../components/AppointmentCard/PatientAppointmentCard/PatientAppointmentCard";
 import { CancellationModal } from "../../components/Modal/CancellationModal/CancellationModal";
 import { AppointmentModal } from "../../components/Modal/AppointmentModal/AppointmentModal";
 
-
 import { useState } from "react";
 
-const Consultas = [
-    { id: 1, name: "Eduardo", age: 18, hour: '12:00', situation: "pendente", type: "Rotina" },
-    { id: 2, name: "Gustavo", age: 18, hour: '12:30', situation: "realizadas", type: "Rotina" },
-    { id: 3, name: "Marcelo", age: 19, hour: '13:00', situation: "canceladas", type: "Urgência" },
-    { id: 4, name: "Marcio", age: 29, hour: '14:00', situation: "pendente", type: "Rotina" },
-    { id: 5, name: "Jao", age: 19, hour: '18:00', situation: "realizadas", type: "Urgência" },
-    { id: 6, name: "Gabriel", age: 16, hour: '13:30', situation: "pendente", type: "Rotina" }
+const ConsultasPaciente = [
+    { id: 1, name: "Dr. Francisco", age: 48, hour: '14:00', situation: "pendente", type: "Rotina" },
+    { id: 2, name: "Dr. Marcos", age: 30, hour: '12:30', situation: "realizadas", type: "Urgência" },
+    { id: 3, name: "Dr. Francisco", age: 48, hour: '14:00', situation: "canceladas", type: "Rotina" }
 ]
 
-export const DoctorSchedule = ({ navigation }) => {
+export const PatientSchedule = ({ navigation }) => {
 
     const [statusList, setStatusList] = useState("pendente")
     const [showModalCancel, setShowModalCancel] = useState(false)
@@ -38,7 +34,6 @@ export const DoctorSchedule = ({ navigation }) => {
                     clickButton={statusList === 'pendente'}
                     onPress={() => setStatusList('pendente')}
                 />
-
                 <AlterButton
                     textButton={'Realizadas'}
                     clickButton={statusList === 'realizadas'}
@@ -53,12 +48,12 @@ export const DoctorSchedule = ({ navigation }) => {
             </ContainerAlter>
 
             <ListComponent
-                    data={Consultas}
+                    data={ConsultasPaciente}
                     keyExtractor={(item) => item.id}
 
                     renderItem={({ item }) =>
                         statusList == item.situation && (
-                            <DoctorAppointmentCard
+                            <PatientAppointmentCard
                                 name={item.name}
                                 age={item.age}
                                 hour={item.hour}
