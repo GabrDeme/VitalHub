@@ -1,7 +1,7 @@
 import { Modal } from "react-native";
 import { ButtonTitle, Title } from "../../Title/Style";
 import { AnotherPatientPhoto } from "../../Logo/Style";
-import { ButtonModal, CancellationButton, CancellationButtonTitle, ModalContent, ModalText, PatientModal } from "./Style";
+import { ButtonModal, CancellationButton, CancellationButtonTitle, ModalContent, ModalText, PatientSizeModal } from "./Style";
 
 export const AppointmentModal = ({
     visible, 
@@ -12,7 +12,7 @@ export const AppointmentModal = ({
 }) =>{
     return (
         <Modal {...rest} visible={visible} transparent={true} animationType="fade">
-            <PatientModal>
+            <PatientSizeModal>
                 <ModalContent>
                     <AnotherPatientPhoto source={require("../../../assets/AnotherPatientPhoto.png")} />
 
@@ -30,7 +30,7 @@ export const AppointmentModal = ({
                         <CancellationButtonTitle>Cancelar</CancellationButtonTitle>
                     </CancellationButton>
                 </ModalContent>
-            </PatientModal>
+            </PatientSizeModal>
         </Modal>
     );
 };

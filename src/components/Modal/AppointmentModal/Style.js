@@ -13,7 +13,7 @@ export const CancellationButtonTitle = styled.Text`
     text-decoration: underline;
     font-family: 'MontserratAlternates_600SemiBold';
 `
-export const PatientModal = styled.View`
+export const PatientSizeModal = styled.View`
     flex: 1;
     align-items:center;
     justify-content: center;

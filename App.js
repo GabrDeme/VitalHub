@@ -15,16 +15,17 @@ import { PatientSchedule } from './src/screens/PatientSchedule/PatientSchedule';
 
 const Stack = createNativeStackNavigator();
 
-import { useFonts, Quicksand_500Medium, MontserratAlternates_700Bold, MontserratAlternates_600SemiBold, MontserratAlternates_500Medium } from "@expo-google-fonts/montserrat-alternates"
+import { useFonts, Quicksand_500Medium, Quicksand_600SemiBold, MontserratAlternates_700Bold, MontserratAlternates_600SemiBold, MontserratAlternates_500Medium } from "@expo-google-fonts/montserrat-alternates"
 
 
 export default function App() {
 
   const [ fontsLoaded, fontsError ] = useFonts({
     Quicksand_500Medium,
-    MontserratAlternates_700Bold,
+    Quicksand_600SemiBold,
+    MontserratAlternates_500Medium,
     MontserratAlternates_600SemiBold,
-    MontserratAlternates_500Medium
+    MontserratAlternates_700Bold    
   })
 
   if(!fontsLoaded && !fontsError) {

@@ -14,7 +14,6 @@ export const Input = styled.TextInput.attrs({
     font-size: 16px;
     font-family: 'MontserratAlternates_600SemiBold';
 `
-
 export const NumberInput = styled(Input)`
     height: 62px;
     width: 62px;
@@ -24,7 +23,7 @@ export const NumberInput = styled(Input)`
     font-family: 'Quicksand_500Medium';
     padding: 0px 18px;
 `
-export const BigInput = styled(Input)`
+export const BiggerInput = styled(Input)`
     height: 121px;
     font-size: 16px;
     text-align-vertical: top;

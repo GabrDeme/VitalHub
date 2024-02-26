@@ -8,6 +8,7 @@ import { PatientAppointmentCard } from "../../components/AppointmentCard/Patient
 import { CancellationModal } from "../../components/Modal/CancellationModal/CancellationModal";
 import { AppointmentModal } from "../../components/Modal/AppointmentModal/AppointmentModal";
 import { FontAwesome6 } from '@expo/vector-icons';
+import { ToScheduleModal } from "../../components/Modal/ToScheduleModal/ToScheduleModal";
 
 import { useState } from "react";
 
@@ -22,6 +23,7 @@ export const PatientSchedule = ({ navigation }) => {
     const [statusList, setStatusList] = useState("pendente")
     const [showModalCancel, setShowModalCancel] = useState(false)
     const [showModalAppointment, setShowModalAppointment] = useState(false)
+    const [showModalToSchedule, setShowModalToSchedule] = useState(false)
 
     return (
 
@@ -77,9 +79,16 @@ export const PatientSchedule = ({ navigation }) => {
                 navigation={navigation}
             />
 
-            <Stethoscope>
+            <Stethoscope
+                onPressToSchedule={() => setShowModalToSchedule(true)}
+            >
                 <FontAwesome6 name="stethoscope" size={32} color="white" />
             </Stethoscope>
+
+            <ToScheduleModal
+                visible={showModalToSchedule}
+                setShowModalToSchedule={setShowModalToSchedule}
+            />
 
         </Container>
 

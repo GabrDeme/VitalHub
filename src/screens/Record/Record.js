@@ -1,6 +1,6 @@
 import { ScrollView } from "react-native";
 import { Container, ContainerInfo } from "../../components/Container/Style";
-import { BigInput, Input } from "../../components/Input/Style";
+import { BigInput, BiggerInput, Input } from "../../components/Input/Style";
 import { LinkSemiBold } from "../../components/Link/Style";
 import { PatientPhoto } from "../../components/Logo/Style";
 import { RandomInfo } from "../../components/Texts/Style";
@@ -27,13 +27,13 @@ export const Record = ({ navigation }) => {
                 </ContainerInfo>
 
                 <SubTitle>Descrição da Consulta</SubTitle>
-                <BigInput placeholder="Descrição" />
+                <BiggerInput placeholder="Descrição" />
 
                 <SubTitle>Diagnóstico do Paciente</SubTitle>
                 <Input placeholder="Diagnóstico" />
 
                 <SubTitle>Prescrição Médica</SubTitle>
-                <BigInput placeholder="Prescrição médica" />
+                <BiggerInput placeholder="Prescrição médica" />
 
                 <LinkSemiBold
                     onPress={() => navigation.navigate("Login")}
