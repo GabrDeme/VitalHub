@@ -10,6 +10,7 @@ export const AppointmentModal = ({
     age,
     ...rest
 }) =>{
+
     return (
         <Modal {...rest} visible={visible} transparent={true} animationType="fade">
             <PatientSizeModal>

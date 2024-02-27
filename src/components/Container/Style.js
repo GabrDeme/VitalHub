@@ -16,9 +16,10 @@ export const ContainerInfo = styled.SafeAreaView`
 `
 export const ContainerAlter = styled.View`
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     width: 92%;
     margin-top: 38px;
+    gap: 18px;
 `
 export const Stethoscope = styled.View`
     height: 60px;

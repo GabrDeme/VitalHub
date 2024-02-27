@@ -18,7 +18,7 @@ const ConsultasPaciente = [
     { id: 3, name: "Dr. Francisco", age: 48, hour: '14:00', situation: "canceladas", type: "Rotina" }
 ]
 
-export const PatientSchedule = ({ navigation }) => {
+export const PatientSchedule = ({ navigation, onPressToSchedule }) => {
 
     const [statusList, setStatusList] = useState("pendente")
     const [showModalCancel, setShowModalCancel] = useState(false)
@@ -78,17 +78,17 @@ export const PatientSchedule = ({ navigation }) => {
                 setShowModalAppointment={setShowModalAppointment}
                 navigation={navigation}
             />
+            <ToScheduleModal
+                visible={showModalToSchedule}
+                onPressToSchedule={() => setShowModalToSchedule(true)}
+                setShowModalToSchedule={setShowModalToSchedule}                
+            />
 
             <Stethoscope
-                onPressToSchedule={() => setShowModalToSchedule(true)}
+            onPress={onPressToSchedule}
             >
                 <FontAwesome6 name="stethoscope" size={32} color="white" />
             </Stethoscope>
-
-            <ToScheduleModal
-                visible={showModalToSchedule}
-                setShowModalToSchedule={setShowModalToSchedule}
-            />
 
         </Container>
 

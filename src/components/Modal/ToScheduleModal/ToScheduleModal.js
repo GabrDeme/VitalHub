@@ -1,19 +1,23 @@
 import { Modal } from "react-native"
-import { SmallerInput, ToScheduleModalContent, ToScheduleModalLabel, ToScheduleSizeModal } from "./Style"
+import { ContainerVoid, SmallerInput, ToScheduleModalContent, ToScheduleModalLabel, ToScheduleSizeModal } from "./Style"
 import { ButtonTitle, Title } from "../../Title/Style"
 import { Input } from "../../Input/Style"
 import { EnterButton } from "../../Button/Style"
 import { CancellationButton, CancellationButtonTitle } from "../CancellationModal/Style"
 import { ContainerAlter } from "../../Container/Style"
 import { ToScheduleAlterButton } from "../../AlterButton/ToScheduleAlterButton/ToScheduleAlterButton"
+import { useState } from "react"
 
 export const ToScheduleModal = ({
     visible,
     setShowModalToSchedule,
     ...rest
 }) => {
+
+    const [statusList, setStatusList] = useState(null);
+
     return (
-        <Modal>
+        <Modal {...rest} visible={visible} transparent={true} animationType="fade">
             <ToScheduleSizeModal>
                 <ToScheduleModalContent>
 
@@ -21,24 +25,32 @@ export const ToScheduleModal = ({
 
                     <ToScheduleModalLabel>Qual o nível da consulta</ToScheduleModalLabel>
                     <ContainerAlter>
-                        {/* <ToScheduleAlterButton
+                        <ToScheduleAlterButton
                             textButton={'Rotina'}
+                            clickButton={statusList === 'rotina'}
+                            onPress={() => setStatusList('rotina')}
                         />
                         <ToScheduleAlterButton
                             textButton={'Exame'}
+                            clickButton={statusList === 'exame'}
+                            onPress={() => setStatusList('exame')}
                         />
                         <ToScheduleAlterButton
                             textButton={'Urgência'}
-                        /> */}
+                            clickButton={statusList === 'urgencia'}
+                            onPress={() => setStatusList('urgencia')}
+                        />
                     </ContainerAlter>
 
                     <ToScheduleModalLabel>Informe a localização desejada</ToScheduleModalLabel>
                     <Input placeholder="Informe a localização"></Input>
 
-                    <EnterButton>
-                        <ButtonTitle
-                        // onPress={() => navigation.navigate("DoctorSchedule")}
-                        >Continuar</ButtonTitle>
+                    <ContainerVoid />
+
+                    <EnterButton
+                    //  onPress={() => navigation.navigate("DoctorSchedule")}
+                    >
+                        <ButtonTitle>Continuar</ButtonTitle>
                     </EnterButton>
                     <CancellationButton onPress={() => setShowModalToSchedule(false)}>
                         <CancellationButtonTitle>Cancelar</CancellationButtonTitle>

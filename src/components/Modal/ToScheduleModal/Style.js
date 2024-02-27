@@ -8,7 +8,7 @@ export const ToScheduleSizeModal = styled.View`
     background-color: rgba(0, 0, 0, 0.6);
 `
 export const ToScheduleModalContent = styled(ModalContent)`
-    width: 100%;
+    width: 115%;
     height: 80%;
     border-radius: 0px;
     /* padding: 30px 30px 10px; */
@@ -21,6 +21,10 @@ export const ToScheduleModalLabel = styled.Text`
     font-size: 14px;
     color: black;
     text-align: flex-start;
-    margin-bottom: 8px;
+    margin-top: 25px;
+    margin-bottom: -8px;
     font-family: "Quicksand_600SemiBold";
+`
+export const ContainerVoid = styled.View`
+    height: 28%;
 `
