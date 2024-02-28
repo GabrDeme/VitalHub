@@ -1,6 +1,9 @@
 import { ClinicCard } from "../../components/AppointmentCard/ClinicCard/ClinicCard";
+import { ContainerBetween, ContainerContinue } from "../../components/AppointmentCard/ClinicCard/Style";
+import { EnterButton } from "../../components/Button/Style";
 import { Container } from "../../components/Container/Style";
-import { Title } from "../../components/Title/Style";
+import { CancellationButton, CancellationButtonTitle } from "../../components/Modal/CancellationModal/Style";
+import { ButtonTitle, Title } from "../../components/Title/Style";
 
 const Clinicas = [
     { id: 1, name: "Clínica Natureh", location: "São Paulo, SP", time: "seg-sex" },
@@ -12,21 +15,21 @@ export const ClinicSelect = ({ navigation }) => {
     return (
 
         <Container>
-
-            <Title>Selecionar Clínica</Title>
-
-                <ClinicCard/>
-
+            <ContainerBetween>
+                <Title>Selecionar Clínica</Title>
+            </ContainerBetween>
+            <ClinicCard />
             <EnterButton
-            //  onPress={() => navigation.navigate("DoctorSchedule")}
+            //  onPress={() => navigation.navigate("PatientSchedule")}
             >
                 <ButtonTitle>Continuar</ButtonTitle>
             </EnterButton>
 
-            <CancellationButton >
+            <CancellationButton
+                onPress={() => navigation.navigate("PatientSchedule")}
+            >
                 <CancellationButtonTitle>Cancelar</CancellationButtonTitle>
             </CancellationButton>
-
         </Container>
     );
 }

@@ -21,7 +21,7 @@ export const ContainerAlter = styled.View`
     margin-top: 38px;
     gap: 18px;
 `
-export const Stethoscope = styled.View`
+export const Stethoscope = styled.TouchableOpacity`
     height: 60px;
     width: 60px;
     align-self: flex-end;

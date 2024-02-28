@@ -8,19 +8,19 @@ export const ClinicCard = ({ }) => {
         <ContainerClinic>
 
             <ContainerUpperRow>
-                <ClinicsName></ClinicsName>
+                <ClinicsName>Cridnska</ClinicsName>
 
                 <ClinicsGrade>
                     <AntDesign name="star" size={20} color="#F9A620" />
-                    <ClinicsGradeNumber></ClinicsGradeNumber>
+                    <ClinicsGradeNumber>2.5</ClinicsGradeNumber>
                 </ClinicsGrade>
             </ContainerUpperRow>
 
             <ContainerLowerRow>
-                <ClinicsLocation></ClinicsLocation>
+                <ClinicsLocation>sao paulo, sp</ClinicsLocation>
                 <OperationsTime>
-                    <MaterialCommunityIcons name="calendar-outline" size={11} color="black" />
-                    <OperationsTimeText></OperationsTimeText>
+                    <MaterialCommunityIcons name="calendar-outline" size={15} marginTop={3} color="#49B3BA" />
+                    <OperationsTimeText>seg-sex</OperationsTimeText>
                 </OperationsTime>
             </ContainerLowerRow>
 

@@ -79,13 +79,14 @@ export const PatientSchedule = ({ navigation, onPressToSchedule }) => {
                 navigation={navigation}
             />
             <ToScheduleModal
+                navigation={navigation}
                 visible={showModalToSchedule}
                 onPressToSchedule={() => setShowModalToSchedule(true)}
-                setShowModalToSchedule={setShowModalToSchedule}                
+                setShowModalToSchedule={setShowModalToSchedule}
             />
 
             <Stethoscope
-            onPress={onPressToSchedule}
+                onPress={() => setShowModalToSchedule(true)}
             >
                 <FontAwesome6 name="stethoscope" size={32} color="white" />
             </Stethoscope>

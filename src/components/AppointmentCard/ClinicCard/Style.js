@@ -1,13 +1,15 @@
 import styled from "styled-components";
-import { ContainerList } from "../DoctorAppointmentCard/Style";
+import { ClockCard, ContainerList } from "../DoctorAppointmentCard/Style";
 
 export const ContainerClinic = styled(ContainerList)`
     height: 85px;
+    flex-direction: column;
 `
 export const ContainerUpperRow = styled.View`
-    width: 90%;
+    width: 100%;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
 `
 export const ClinicsName = styled.Text`
     font-size: 16px;
@@ -15,7 +17,7 @@ export const ClinicsName = styled.Text`
     font-family: 'MontserratAlternates_600SemiBold';
 `
 export const ClinicsGrade = styled.View`
-    width: 45;
+    width: 45px;
 `
 export const ClinicsGradeNumber = styled.Text`
     font-size: 14px;
@@ -23,18 +25,23 @@ export const ClinicsGradeNumber = styled.Text`
     font-family: 'Quicksand_600SemiBold';
 `
 export const ContainerLowerRow = styled(ContainerUpperRow)`
+    justify-content: space-between;
 `
-export const ClinicsLocation = styled(ClinicsGrade)`
+export const ClinicsLocation = styled(ClinicsGradeNumber)`
     color: #4E4B59;
 `
-export const OperationsTime = styled.View`
-    padding: 4px 23px;
-    gap: 6px;
-    border-radius: 5px;
-    background-color: "#e8fcfd";
+export const OperationsTime = styled(ClockCard)`
+    color: "black";
 `
 export const OperationsTimeText = styled.Text`
     font-size: 14px;
     color: #49B3BA; 
     font-family: 'Quicksand_600SemiBold';
+`
+export const ContainerBetween = styled.View`
+    margin-top: 45px;
+    margin-bottom: 35px;
+`
+export const ContainerContinue = styled.View`
+    flex-direction: flex-end
 `

@@ -9,6 +9,7 @@ import { ToScheduleAlterButton } from "../../AlterButton/ToScheduleAlterButton/T
 import { useState } from "react"
 
 export const ToScheduleModal = ({
+    navigation,
     visible,
     setShowModalToSchedule,
     ...rest
@@ -48,7 +49,7 @@ export const ToScheduleModal = ({
                     <ContainerVoid />
 
                     <EnterButton
-                    //  onPress={() => navigation.navigate("DoctorSchedule")}
+                        onPress={() => navigation.navigate("ClinicSelect")}
                     >
                         <ButtonTitle>Continuar</ButtonTitle>
                     </EnterButton>

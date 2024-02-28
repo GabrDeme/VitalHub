@@ -12,12 +12,12 @@ import { Record } from './src/screens/Record/Record';
 import { Profile } from './src/screens/Profile/Profile';
 import { DoctorSchedule } from './src/screens/DoctorSchedule/DoctorSchedule';
 import { PatientSchedule } from './src/screens/PatientSchedule/PatientSchedule';
+import { ClinicSelect } from './src/screens/ClinicSelect/ClinicSelect';
 
 const Stack = createNativeStackNavigator();
 
 import { useFonts, MontserratAlternates_700Bold, MontserratAlternates_600SemiBold, MontserratAlternates_500Medium } from "@expo-google-fonts/montserrat-alternates"
 import { Quicksand_400Regular, Quicksand_500Medium, Quicksand_600SemiBold } from "@expo-google-fonts/quicksand"
-
 
 export default function App() {
 
@@ -107,7 +107,7 @@ export default function App() {
         
           name='DoctorSchedule'
           component={ DoctorSchedule }
-          options={{title: 'ConsultasMedico'}}
+          options={{title: 'Consultas Medico'}}
           
           />
 
@@ -115,7 +115,15 @@ export default function App() {
         
           name='PatientSchedule'
           component={ PatientSchedule }
-          options={{title: 'ConsultasPaciente'}}
+          options={{title: 'Consultas Paciente'}}
+          
+          />
+
+        <Stack.Screen
+        
+          name='ClinicSelect'
+          component={ ClinicSelect }
+          options={{title: 'Selecionar a Clínica'}}
           
           />
           
