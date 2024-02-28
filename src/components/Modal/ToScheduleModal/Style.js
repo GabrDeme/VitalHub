@@ -20,7 +20,8 @@ export const ToScheduleModalContent = styled(ModalContent)`
 export const ToScheduleModalLabel = styled.Text`
     font-size: 14px;
     color: black;
-    text-align: flex-start;
+    align-self: flex-start;
+    margin-left: 5%;
     margin-top: 25px;
     margin-bottom: -8px;
     font-family: "Quicksand_600SemiBold";

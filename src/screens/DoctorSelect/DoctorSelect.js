@@ -1,33 +1,28 @@
 import { ClinicCard } from "../../components/AppointmentCard/ClinicCard/ClinicCard";
-import { ContainerBetween, ContainerContinue } from "../../components/AppointmentCard/ClinicCard/Style";
+import { ContainerBetween } from "../../components/AppointmentCard/ClinicCard/Style";
+import { DoctorCard } from "../../components/AppointmentCard/DoctorCard/DoctorCard";
 import { EnterButton } from "../../components/Button/Style";
 import { Container } from "../../components/Container/Style";
 import { CancellationButton, CancellationButtonTitle } from "../../components/Modal/CancellationModal/Style";
 import { ButtonTitle, Title } from "../../components/Title/Style";
 
-const Clinicas = [
-    { id: 1, name: "Clínica Natureh", location: "São Paulo, SP", time: "seg-sex" },
-    { id: 2, name: "Clinica Villa Lobos", location: "Taboão, SP", time: "seg-sáb" },
-    { id: 3, name: "Clínica Senai", location: "Centro de SCS, SP", time: "seg-dom" }
-]
-
-export const ClinicSelect = ({ navigation }) => {
-    return (
-
+export const DoctorSelect = ({ navigation }) => {
+    return(
         <Container>
             <ContainerBetween>
-                <Title>Selecionar Clínica</Title>
+                <Title>Selecionar Médico</Title>
             </ContainerBetween>
-            <ClinicCard />
+            
+            <DoctorCard/>
+
             <EnterButton
-                onPress={() => navigation.navigate("DoctorSelect")}
+            //  onPress={() => navigation.navigate("PatientSchedule")}
             >
                 <ButtonTitle>Continuar</ButtonTitle>
             </EnterButton>
 
             <CancellationButton
-            onPress={() => navigation.navigate("PatientSchedule")}
-                // onPress={() => navigation.navigate("PatientSchedule")}
+                onPress={() => navigation.navigate("PatientSchedule")}
             >
                 <CancellationButtonTitle>Cancelar</CancellationButtonTitle>
             </CancellationButton>
