@@ -16,13 +16,13 @@ export const DoctorSelect = ({ navigation }) => {
             <DoctorCard/>
 
             <EnterButton
-            //  onPress={() => navigation.navigate("PatientSchedule")}
+             onPress={() => navigation.navigate("CalendarSelect")}
             >
                 <ButtonTitle>Continuar</ButtonTitle>
             </EnterButton>
 
             <CancellationButton
-                onPress={() => navigation.navigate("PatientSchedule")}
+                onPress={() => navigation.navigate("ClinicSelect")}
             >
                 <CancellationButtonTitle>Cancelar</CancellationButtonTitle>
             </CancellationButton>
