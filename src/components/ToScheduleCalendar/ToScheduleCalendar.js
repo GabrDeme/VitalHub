@@ -1,77 +1,78 @@
-import { ToScheduleCalendar } from "./Styles"
-import 'moment/locale/pt-br';
-import { useMemo, useState } from "react";
-import { LocaleConfig } from "react-native-calendars";
+import { Calendar, LocaleConfig } from 'react-native-calendars';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native'
+import { DayContainer, DayText } from './Style';
 
-//instância da data atual
-const currentDate = new Date();
-
-//define a data inicial como sendo o primeiro dia do mês
-const startingDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), 2);
-
-//define a data final como sendo o último dia do mês
-const endingDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
-
-LocaleConfig.locales['pt-br'] = {
-  //meses
-  monthNames:
-    "Janeiro_Fevereiro_Março_Abril_Maio_Junho_Julho_Agosto_Setembro_Outubro_Novembro_Dezembro".split(
-      "_"
-    ),
-
-  //abreviação de meses
-  monthNamesShort: "jan_fev_mar_abr_mai_jun_jul_ago_set_out_nov_dez".split("_"),
-
-  //dias da semana
-  dayNames:
-    "domingo_segunda-feira_terça-feira_quarta-feira_quinta-feira_sexta-feira_sábado".split(
-      "_"
-    ),
-
-  //abreviação dias da semana
-  dayNamesShort: "Dom_Seg_Ter_Qua_Qui_Sex_Sáb".split("_"),
+LocaleConfig.locales['br'] = {
+  monthNames: [
+    'Janeiro',
+    'Fevereiro',
+    'Março',
+    'Abril',
+    'Maio',
+    'Junho',
+    'Julho',
+    'Agosto',
+    'Setembro',
+    'Outubro',
+    'Novembro',
+    'Dezembro'
+  ],
+  dayNames: ['Domingo', 'Segunda', 'Terca', 'Quarta', 'Quinta', 'Sexta', 'Sabado'],
+  dayNamesShort: ['Dom.', 'Seg.', 'Ter.', 'Qua.', 'Qui.', 'Sex.', 'Sab.'],
+  today: "Atualmente"
 };
+LocaleConfig.defaultLocale = 'br';
 
-LocaleConfig.defaultLocale = 'pt-br'
+export default function FullCalender({ selectedDate = '', handleSelectedDateFn = null }) {
+    const currentDate = new Date().toUTCString();
 
+    // Função para renderizar o cabeçalho do calendário com a fonte personalizada
+    const renderHeader = (date) => {
+        return (
+            <TouchableOpacity>
+                <Text style={styles.headerText}>{LocaleConfig.locales[LocaleConfig.defaultLocale].monthNames[date.getMonth()]} {date.getFullYear()}</Text>
+            </TouchableOpacity>
+        );
+    }
 
-export const ToScheduleCalendar = () => {
-  const [select, setSelect] = useState('')
-
-  const onDayPress = (day => {
-    setSelect(day.dateString);
-  });
-
-  const marked = useMemo(() => {
-    return {
-      [select]: {
-        selected: true,
-        disableTouchEvent: true,
-        selectedColor: '#60BFC5',
-        selectedDayTextColor: '#ffffff',
-      }
-    };
-  }, [select]);
-  return (
-    <ToScheduleCalendar
-      hideArrows={true}
-      minDate={startingDate.toDateString()}
-      maxDate={endingDate.toDateString()}
-      onDayPress={onDayPress}
-      markedDates={marked}
-      theme={{
-        textSectionTitleColor: '#ACABB7',
-        todayTextColor: '#5F5C6B',
-        textDisabledColor: '#d9e1e8',
-        monthTextColor: '#4E4B59',
-        textMonthFontFamily: 'MontserratAlternates_600SemiBold',
-        textDayHeaderFontFamily: 'Quicksand_600SemiBold',
-        textDayFontFamily: 'Quicksand_600SemiBold',
-        textDayFontSize: 14,
-        textMonthFontSize: 20,
-        textDayHeaderFontSize: 14
-      }}
-
-    />
-  )
+    return (
+        <Calendar 
+            minDate={currentDate} 
+            monthFormat='MMMM yyyy'
+            enableSwipeMonths={true}
+            hideArrows={true}
+            style={styles.calendar}
+            theme={{
+                dotColor: '#60BFC5',
+                calendarBackground: 'white'
+            }}
+            renderHeader={renderHeader} // Renderizar o cabeçalho personalizado
+            dayComponent={({ date, state }) =>
+                <TouchableOpacity style={styles.button} onPress={() => {
+                    if (state == 'disabled')
+                        return;
+''
+                    handleSelectedDateFn(date.dateString)
+                    
+                }}>
+                    <DayContainer isSelected={date.dateString == selectedDate}>
+                        <DayText isSelected={date.dateString == selectedDate} isDisabled={state == 'disabled'}>{date.day}</DayText>
+                    </DayContainer>
+                </TouchableOpacity>
+            }
+        />
+    )
 }
+
+const styles = StyleSheet.create({
+    calendar: {
+        width:350,
+        marginBottom: 10
+    },
+     headerText: {
+        fontSize: 22, 
+        fontFamily: 'MontserratAlternates_600SemiBold',
+        color: '#5F5C6B',
+        marginBottom: 20
+    }
+});

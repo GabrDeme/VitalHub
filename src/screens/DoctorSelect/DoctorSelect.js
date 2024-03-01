@@ -16,7 +16,7 @@ export const DoctorSelect = ({ navigation }) => {
             <DoctorCard/>
 
             <EnterButton
-             onPress={() => navigation.navigate("CalendarSelect")}
+             onPress={() => navigation.navigate("DateSelect")}
             >
                 <ButtonTitle>Continuar</ButtonTitle>
             </EnterButton>

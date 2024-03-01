@@ -26,7 +26,7 @@ export const ClinicSelect = ({ navigation }) => {
             </EnterButton>
 
             <CancellationButton
-                onPress={() => navigation.navigate("ToScheduleModal")}
+                onPress={() => navigation.navigate("PatientSchedule")}
             >
                 <CancellationButtonTitle>Cancelar</CancellationButtonTitle>
             </CancellationButton>
