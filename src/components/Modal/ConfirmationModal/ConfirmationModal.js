@@ -2,6 +2,8 @@ import { Modal } from "react-native";
 import { ButtonModal, CancellationButton, CancellationButtonTitle, ModalText } from "../AppointmentModal/Style";
 import { ButtonTitle, Title } from "../../Title/Style";
 import { PatientModal, ModalContent } from "../CancellationModal/Style";
+import { QueryData } from "../../QueryData/QueryData";
+import { PatientSchedule } from "../../../screens/PatientSchedule/PatientSchedule";
 
 export const ConfirmationModal = ({
     navigation,
@@ -19,7 +21,24 @@ export const ConfirmationModal = ({
                     Consulte os dados selecionados para a sua consulta
                     </ModalText>
 
-                    <ButtonModal>
+                    <QueryData
+                        title={'Data da Consulta'}
+                        text={'1 de Novembro de 2023'}
+                    />
+                    <QueryData
+                        title={'Médico(a) da consulta'}
+                        text={'Dra Alessandra'}
+                    />
+                    <QueryData
+                        title={'Local da consulta'}
+                        text={'São Paulo, SP'}
+                    />
+                    <QueryData
+                        title={'Tipo da consulta'}
+                        text={'Rotina'}
+                    />
+
+                    <ButtonModal onPress={() => navigation.navigate("PatientSchedule")}>
                         <ButtonTitle>Confirmar</ButtonTitle>
                     </ButtonModal>
 

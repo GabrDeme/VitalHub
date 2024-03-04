@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { ButtonCard2, ButtonText2, ClockCard2, ContainerList2, ContentCard2, DataProfileCard2, ProfileData2, ProfileImage2, ProfileName2, TextAge2, TextBold2, ViewRow2 } from "./Style";
 
 import { AntDesign } from '@expo/vector-icons';
+import { DoctorInfoModal } from "../../Modal/DoctorInfoModal/DoctorInfoModal";
 
 export const PatientAppointmentCard = ({
     situation = "pendente",

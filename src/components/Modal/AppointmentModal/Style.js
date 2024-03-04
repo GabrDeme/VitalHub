@@ -36,5 +36,5 @@ export const ModalText = styled.Text`
     font-family: "Quicksand_500Medium";
 `
 export const ButtonModal = styled(EnterButton)`
-    width: 80%;
+    width: 100%;
 `

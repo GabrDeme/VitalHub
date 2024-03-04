@@ -43,9 +43,10 @@ export const DateSelect = ({ navigation }) => {
             </CancellationButton>
 
             <ConfirmationModal
-                visible={showConfirmation}
-                setShowModalSummary={setShowConfirmation}
                 navigation={navigation}
+                visible={showConfirmation}
+                onPressToSchedule={() =>setShowConfirmation(true)}
+                setShowConfirmation={setShowConfirmation}
             />
 
         </Container>

@@ -17,6 +17,7 @@ export const PatientPhoto = styled.Image`
     width: 100%;
 `
 export const AnotherPatientPhoto = styled.Image`
+    border-radius: 10px;
     height: 180px;
     width: 285px;
 `

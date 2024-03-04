@@ -1,4 +1,4 @@
-import { ScrollView } from "react-native";
+import { ScrollView, TouchableOpacity } from "react-native";
 import { Header } from "../../components/Header/Header";
 import { Container, ContainerAlter, Stethoscope } from "../../components/Container/Style";
 import { CalendarList } from "../../components/Calendar/Calendar";
@@ -9,6 +9,8 @@ import { CancellationModal } from "../../components/Modal/CancellationModal/Canc
 import { AppointmentModal } from "../../components/Modal/AppointmentModal/AppointmentModal";
 import { FontAwesome6 } from '@expo/vector-icons';
 import { ToScheduleModal } from "../../components/Modal/ToScheduleModal/ToScheduleModal";
+import { DoctorInfoModal } from "../../components/Modal/DoctorInfoModal/DoctorInfoModal";
+
 
 import { useState } from "react";
 
@@ -18,9 +20,10 @@ const ConsultasPaciente = [
     { id: 3, name: "Dr. Francisco", age: 48, hour: '14:00', situation: "canceladas", type: "Rotina" }
 ]
 
-export const PatientSchedule = ({ navigation, onPressToSchedule }) => {
+export const PatientSchedule = ({ navigation }) => {
 
     const [statusList, setStatusList] = useState("pendente")
+    const [showModalDoctorInfo, setShowModalDoctorInfo] = useState(false)
     const [showModalCancel, setShowModalCancel] = useState(false)
     const [showModalAppointment, setShowModalAppointment] = useState(false)
     const [showModalToSchedule, setShowModalToSchedule] = useState(false)
@@ -56,15 +59,17 @@ export const PatientSchedule = ({ navigation, onPressToSchedule }) => {
 
                 renderItem={({ item }) =>
                     statusList == item.situation && (
-                        <PatientAppointmentCard
-                            name={item.name}
-                            age={item.age}
-                            hour={item.hour}
-                            situation={item.situation}
-                            type={item.type}
-                            onPressCancel={() => setShowModalCancel(true)}
-                            onPressAppointment={() => setShowModalAppointment(true)}
-                        />
+                       <TouchableOpacity onPress={() => {setShowModalDoctorInfo(true)}}>
+                            <PatientAppointmentCard
+                                name={item.name}
+                                age={item.age}
+                                hour={item.hour}
+                                situation={item.situation}
+                                type={item.type}
+                                onPressCancel={() => setShowModalCancel(true)}
+                                onPressAppointment={() => setShowModalAppointment(true)}
+                            />
+                        </TouchableOpacity>
                     )
                 }
             />
@@ -83,6 +88,11 @@ export const PatientSchedule = ({ navigation, onPressToSchedule }) => {
                 visible={showModalToSchedule}
                 onPressToSchedule={() => setShowModalToSchedule(true)}
                 setShowModalToSchedule={setShowModalToSchedule}
+            />
+            <DoctorInfoModal
+                navigation={navigation}
+                visible={showModalDoctorInfo}
+                setShowModalDoctorInfo={setShowModalDoctorInfo}
             />
 
             <Stethoscope

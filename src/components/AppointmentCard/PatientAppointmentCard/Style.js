@@ -11,7 +11,6 @@ export const ContainerList2 = styled.View`
     background-color: #fff;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.08);
     margin: 0 auto;
-    margin-bottom: 12px;
 `
 export const ProfileImage2 = styled.Image`
     height: 100%;
