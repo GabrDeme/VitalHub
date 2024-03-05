@@ -7,7 +7,15 @@ import { LinkBold, LinkMedium } from "../../components/Link/Style";
 import { EnterButton, GoogleButton } from "../../components/Button/Style";
 import { ContentAccount, TextAccount } from "./Style";
 
+
+
+
 export const Login = ({ navigation }) => {
+
+    async function Login() {
+        navigation.navigate("Main")
+    }
+    
     return (
         <Container>
             <Logo source={require("../../assets/PrimaryLogo.png")} />
@@ -24,10 +32,8 @@ export const Login = ({ navigation }) => {
 
             >Esqueceu sua senha?</LinkMedium>
 
-            <EnterButton>
-                <ButtonTitle
-                    onPress={() => navigation.navigate("DoctorSchedule")}
-                >Entrar</ButtonTitle>
+            <EnterButton onPress={() => Login()}>
+                <ButtonTitle>Entrar</ButtonTitle>
             </EnterButton>
 
             <GoogleButton>

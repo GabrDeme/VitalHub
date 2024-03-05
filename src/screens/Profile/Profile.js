@@ -6,6 +6,8 @@ import { RandomInfo } from "../../components/Texts/Style";
 import { StatusBar } from "expo-status-bar";
 import { DataInput, LowerDataInput } from "../../components/Input/Style";
 import { EnterButton, ExitButton } from "../../components/Button/Style";
+import { ViewFormat } from "../SeeLocation/Style";
+import { BoxInput } from "../../components/BoxInput/BoxInput";
 
 export const Profile = ({ navigation }) => {
     return (
@@ -34,10 +36,19 @@ export const Profile = ({ navigation }) => {
                 <SubTitle>Endereço</SubTitle>
                 <DataInput placeholder="R. Meio do Nada, 123"></DataInput>
 
-                <SubTitle>Cep</SubTitle>
-                <DataInput placeholder="00000-00" keyboardType="numeric"></DataInput>
-                <SubTitle>Cidade</SubTitle>
-                <DataInput placeholder="Lugar Nenhum-SP"></DataInput>
+                <ViewFormat>
+                    <BoxInput
+                        textLabel={'Cep'}
+                        placeholder={'00000-00'}
+                        fieldWidth={45}
+                        keyboardType={"numeric"}
+                    />
+                    <BoxInput
+                        textLabel={'Cidade'}
+                        placeholder={'Lugar Nenhum-SP'}
+                        fieldWidth={45}
+                    />
+                </ViewFormat>
 
                 <EnterButton>
                     <ButtonTitle>Salvar</ButtonTitle>
@@ -48,7 +59,7 @@ export const Profile = ({ navigation }) => {
                 </EnterButton>
 
                 <ExitButton>
-                    <ButtonTitle onPress={() => navigation.navigate("Navigation")}>SAIR DO APP </ButtonTitle>
+                    <ButtonTitle onPress={() => { navigation.navigate("Navigation") }}>SAIR DO APP </ButtonTitle>
                 </ExitButton>
             </Container>
         </ScrollView>

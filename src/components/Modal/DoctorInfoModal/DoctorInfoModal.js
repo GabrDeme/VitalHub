@@ -6,6 +6,7 @@ import { ButtonTitle, Title } from "../../Title/Style";
 
 export const DoctorInfoModal = ({
     visible, 
+    navigation,
     setShowModalDoctorInfo, 
     name, 
     age,
@@ -24,7 +25,7 @@ export const DoctorInfoModal = ({
                         Clínica Geral    CRM-15286
                     </ModalText>
 
-                    <ButtonModal>
+                    <ButtonModal onPress={() => navigation.navigate("SeeLocation")}>
                         <ButtonTitle>Ver Local da Consulta</ButtonTitle>
                     </ButtonModal>
 

@@ -15,11 +15,14 @@ import { PatientSchedule } from './src/screens/PatientSchedule/PatientSchedule';
 import { ClinicSelect } from './src/screens/ClinicSelect/ClinicSelect';
 import { DoctorSelect } from './src/screens/DoctorSelect/DoctorSelect';
 import { DateSelect } from './src/screens/DateSelect/DateSelect';
+import { SeeLocation } from './src/screens/SeeLocation/SeeLocation';
+import { Prescription } from './src/screens/Prescription/Prescription';
 
 const Stack = createNativeStackNavigator();
 
 import { useFonts, MontserratAlternates_700Bold, MontserratAlternates_600SemiBold, MontserratAlternates_500Medium } from "@expo-google-fonts/montserrat-alternates"
 import { Quicksand_400Regular, Quicksand_500Medium, Quicksand_600SemiBold } from "@expo-google-fonts/quicksand"
+import { Main } from './src/screens/Main/Main';
 
 export default function App() {
 
@@ -40,15 +43,7 @@ export default function App() {
       <Stack.Navigator screenOptions={{
         headerShown: false
       }}>
-
-        <Stack.Screen
         
-          name='Navegacao'
-          component={Navigation}
-          options={{title: 'Navegacao'}}
-          
-          />
-
         <Stack.Screen
         
           name='Login'
@@ -56,6 +51,22 @@ export default function App() {
           options={{title: 'Login'}}
           
           />
+
+        <Stack.Screen
+        
+          name='Main'
+          component={ Main }
+          />
+
+        {/* <Stack.Screen
+        
+          name='Navegacao'
+          component={Navigation}
+          options={{title: 'Navegacao'}}
+          
+          /> */}
+
+
 
         <Stack.Screen
         
@@ -142,6 +153,22 @@ export default function App() {
           name='DateSelect'
           component={ DateSelect }
           options={{title: 'Selecionar a Data'}}
+          
+          />
+
+        <Stack.Screen
+        
+          name='SeeLocation'
+          component={ SeeLocation }
+          options={{title: 'Ver Localização'}}
+          
+          />
+
+        <Stack.Screen
+        
+          name='Prescription'
+          component={ Prescription }
+          options={{title: 'Ver Prescrição do Médico'}}
           
           />
           

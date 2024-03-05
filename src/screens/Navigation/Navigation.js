@@ -2,9 +2,9 @@ import { Button, View } from "react-native"
 
 //                     props
 //                       |
-export const Navigation = ({navigation}) => {
+export const Navigation = ({ navigation }) => {
     return (
-        <View style={{flex: 1, alignItems: "center", justifyContent: "center", gap: 20}}>
+        <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: 20 }}>
 
             <Button
                 title="Login"
@@ -15,31 +15,36 @@ export const Navigation = ({navigation}) => {
                 title="Médico"
                 onPress={() => navigation.navigate("DoctorSchedule")}
             /> */}
-            
+
             <Button
                 title="Paciente"
-                onPress={() => {navigation.navigate("PatientSchedule")}}
+                onPress={() => { navigation.navigate("PatientSchedule") }}
             />
 
-{/*         <Button
+            {/* <Button
                 title="Prontuário"
                 onPress={() => navigation.navigate("Record")}
             />
-*/}
+
             <Button
                 title="Perfil Paciente"
                 onPress={() => navigation.navigate("Profile")}
-            /> 
+            /> */}
 
-{/*         <Button
+            {/*         <Button
                 title="Selecionar Clínica"
                 onPress={() => navigation.navigate("ClinicSelect")}
             /> 
-*/}
+
             <Button
                 title="Selecionar Data"
                 onPress={() => navigation.navigate("DateSelect")}
-            /> 
+            />  */}
+
+            <Button
+                title="Prescrição do Médico"
+                onPress={() => navigation.navigate("Prescription")}
+            />
 
         </View>
     );

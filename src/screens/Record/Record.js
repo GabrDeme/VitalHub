@@ -35,11 +35,6 @@ export const Record = ({ navigation }) => {
                 <SubTitle>Prescrição Médica</SubTitle>
                 <BiggerInput placeholder="Prescrição médica" />
 
-                <LinkSemiBold
-                    onPress={() => navigation.navigate("Login")}
-                >Cancelar</LinkSemiBold>
-
-
                 <EnterButton>
                     <ButtonTitle>Salvar</ButtonTitle>
                 </EnterButton>
@@ -47,6 +42,9 @@ export const Record = ({ navigation }) => {
                     <ButtonTitle>Editar</ButtonTitle>
                 </EnterButton>
 
+                <LinkSemiBold
+                    onPress={() => navigation.navigate("Login")}
+                >Cancelar</LinkSemiBold>
 
             </Container>
         </ScrollView>
