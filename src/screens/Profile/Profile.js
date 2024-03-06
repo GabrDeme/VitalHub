@@ -59,7 +59,7 @@ export const Profile = ({ navigation }) => {
                 </EnterButton>
 
                 <ExitButton>
-                    <ButtonTitle onPress={() => { navigation.navigate("Navigation") }}>SAIR DO APP </ButtonTitle>
+                    <ButtonTitle>Sair do app </ButtonTitle>
                 </ExitButton>
             </Container>
         </ScrollView>

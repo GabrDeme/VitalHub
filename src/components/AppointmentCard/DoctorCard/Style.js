@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ClinicsName } from "../ClinicCard/Style";
+import { ContainerList } from "../DoctorAppointmentCard/Style";
 
 export const Name = styled(ClinicsName)`
 `
@@ -13,4 +14,7 @@ export const ContainerNameSpeciality = styled.View`
     height: 100%;
     justify-content: space-around;
     margin-left: 4%;
+`
+export const DoctorContainerList = styled(ContainerList)`
+    width: 95%;
 `

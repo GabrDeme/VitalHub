@@ -3,10 +3,11 @@ import { ClockCard, ContainerList } from "../DoctorAppointmentCard/Style";
 
 export const ContainerClinic = styled(ContainerList)`
     height: 85px;
+    width: 100%;
     flex-direction: column;
 `
 export const ContainerUpperRow = styled.View`
-    width: 100%;
+    width: 90%;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;

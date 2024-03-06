@@ -1,9 +1,11 @@
+import { ScrollView } from "react-native";
 import { ClinicCard } from "../../components/AppointmentCard/ClinicCard/ClinicCard";
 import { ContainerBetween, ContainerContinue } from "../../components/AppointmentCard/ClinicCard/Style";
 import { EnterButton } from "../../components/Button/Style";
 import { Container } from "../../components/Container/Style";
 import { CancellationButton, CancellationButtonTitle } from "../../components/Modal/CancellationModal/Style";
 import { ButtonTitle, Title } from "../../components/Title/Style";
+import { BottomButtom } from "./Style";
 
 const Clinicas = [
     { id: 1, name: "Clínica Natureh", location: "São Paulo, SP", time: "seg-sex" },
@@ -18,12 +20,15 @@ export const ClinicSelect = ({ navigation }) => {
             <ContainerBetween>
                 <Title>Selecionar Clínica</Title>
             </ContainerBetween>
-            <ClinicCard />
-            <EnterButton
+            <ScrollView>
+                <ClinicCard />
+            </ScrollView>
+
+            <BottomButtom
                 onPress={() => navigation.navigate("DoctorSelect")}
             >
                 <ButtonTitle>Continuar</ButtonTitle>
-            </EnterButton>
+            </BottomButtom>
 
             <CancellationButton
                 onPress={() => navigation.navigate("PatientSchedule")}

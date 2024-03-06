@@ -4,14 +4,14 @@ import { Container, ContainerInfo } from "../../components/Container/Style";
 import { PatientPhoto } from "../../components/Logo/Style";
 import { ButtonTitle, SubTitle, Title } from "../../components/Title/Style";
 import { RandomInfo } from "../../components/Texts/Style";
-import { BiggerDataInput, ButtonInsertPhoto, Line, ViewInsertPhoto } from "./Style";
+import { BiggerDataInput, ButtonInsertPhoto, Line, RedLinkBold, ViewInsertPhoto } from "./Style";
 import { DataInput, Input } from "../../components/Input/Style";
 import { EnterButton } from "../../components/Button/Style";
 import { LinkSemiBold } from "../../components/Link/Style";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { ButtonCard, ButtonText } from "../../components/AppointmentCard/DoctorAppointmentCard/Style";
 
-export const Prescription = ({ }) => {
+export const Prescription = ({ navigation }) => {
     return (
 
         <ScrollView>
@@ -31,7 +31,7 @@ export const Prescription = ({ }) => {
                 </ContainerInfo>
 
                 <SubTitle>Descrição da Consulta</SubTitle>
-                <BiggerDataInput placeholder="Descrição" />
+                <BiggerDataInput placeholder="Descrição"/>
 
                 <SubTitle>Diagnóstico do Paciente</SubTitle>
                 <DataInput placeholder="Diagnóstico" />
@@ -49,18 +49,16 @@ export const Prescription = ({ }) => {
                         <MaterialCommunityIcons name="camera-plus-outline" size={26} color="white" />
                         <ButtonTitle>Enviar</ButtonTitle>
                     </ButtonInsertPhoto>
-                    <ButtonCard>
-                        <ButtonText>Cancelar</ButtonText>
-                    </ButtonCard>
+                    <RedLinkBold>Cancelar</RedLinkBold>
 
                 </ViewInsertPhoto>
 
-                <Line> </Line>
+                <Line />
 
                 <BiggerDataInput placeholder="Resultado do exame de sangue : " />
 
                 <LinkSemiBold
-                    onPress={() => navigation.navigate("Login")}
+                    onPress={() => navigation.navigate("PatientSchedule")}
                 >Voltar</LinkSemiBold>
 
             </Container>

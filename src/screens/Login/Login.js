@@ -36,7 +36,7 @@ export const Login = ({ navigation }) => {
                 <ButtonTitle>Entrar</ButtonTitle>
             </EnterButton>
 
-            <GoogleButton>
+            <GoogleButton onPress={() => navigation.navigate("PatientSchedule")}>
                 <AntDesign name="google" size={20} color="#496BBA" />
                 <ButtonTitleGoogle>
                     Entrar com Google

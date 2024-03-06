@@ -9,7 +9,7 @@ export const ToScheduleSwitchButton = styled(SwitchButton)`
     ` : css`
         background-color: transparent;
         border: 2px solid #60BFC5;
-    `}
+    `};
 `
 export const ToScheduleAlterButtonTitle = styled(AlterButtonTitle)`
     /* ${props => props.clickButton ? css`

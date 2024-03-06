@@ -1,9 +1,9 @@
 import { ContainerList, ProfileImage } from "../DoctorAppointmentCard/Style";
-import { ContainerNameSpeciality, Name, Speciality } from "./Style";
+import { ContainerNameSpeciality, DoctorContainerList, Name, Speciality } from "./Style";
 
 export const DoctorCard = ({ navigation }) => {
     return (
-        <ContainerList>
+        <DoctorContainerList>
 
             <ProfileImage source={{ uri: "https://github.com/zAlves31.png" }} />
 
@@ -12,6 +12,6 @@ export const DoctorCard = ({ navigation }) => {
                 <Speciality>Demartologa, Eletricista</Speciality>
             </ContainerNameSpeciality>
 
-        </ContainerList>
+        </DoctorContainerList>
     );
 }
