@@ -2,7 +2,7 @@ import styled, {css} from "styled-components"
 
 export const SwitchButton = styled.TouchableHighlight`
     height: 43px;
-    width: 110px;
+    width: 102px;
     padding: 12px 14px;
     margin-top: -40px;
     border-radius: 5px;

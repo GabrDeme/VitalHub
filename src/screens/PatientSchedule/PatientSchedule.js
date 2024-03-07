@@ -31,7 +31,7 @@ export const PatientSchedule = ({ navigation }) => {
     return (
 
         <Container>
-            <Header />
+            <Header navigation={navigation} />
             <CalendarList />
 
             <ContainerAlter>
@@ -59,12 +59,13 @@ export const PatientSchedule = ({ navigation }) => {
 
                 renderItem={({ item }) =>
                     statusList == item.situation && (
-                       <TouchableOpacity onPress={() => {setShowModalDoctorInfo(true)}}>
+                        <TouchableOpacity onPress={() => { setShowModalDoctorInfo(true) }}>
                             <PatientAppointmentCard
                                 name={item.name}
                                 age={item.age}
                                 hour={item.hour}
                                 situation={item.situation}
+                                navigation={navigation}
                                 type={item.type}
                                 onPressCancel={() => setShowModalCancel(true)}
                                 onPressAppointment={() => setShowModalAppointment(true)}
@@ -79,6 +80,7 @@ export const PatientSchedule = ({ navigation }) => {
                 setShowModalCancel={setShowModalCancel}
             />
             <AppointmentModal
+                situation="pendente"
                 visible={showModalAppointment}
                 setShowModalAppointment={setShowModalAppointment}
                 navigation={navigation}

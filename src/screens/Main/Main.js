@@ -5,15 +5,17 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 const BottomTab = createBottomTabNavigator()
 
 import { DoctorSchedule } from "../DoctorSchedule/DoctorSchedule";
+import { PatientSchedule } from "../PatientSchedule/PatientSchedule";
 import { Profile } from "../Profile/Profile";
 
 import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 
-export const Main = () => {
+export const Main = ( {route} ) => {
+    const {check} = route.params;
     return (
         <BottomTab.Navigator
             //Definir a rota inicial
-            initialRouteName="DoctorSchedule"
+            initialRouteName={{ check }}
 
             screenOptions={({ route }) => ({
                 tabBarStyle: { backgroundColor: "#ffffff", height: 80, paddingTop: 10 },
@@ -22,21 +24,25 @@ export const Main = () => {
                 headerShown: false,
 
                 tabBarIcon: ({ focused }) => {
-                    if (route.name === "DoctorSchedule") {
+                    if (route.name === "Schedule") {
                         return (
                             <ContentIcon
-                                tabBarActiveBackgroundColor = {focused ? "#ecf2ff" : "transparent"}
+                                tabBarActiveBackgroundColor={focused ? "#ecf2ff" : "transparent"}
                             >
-                                <FontAwesome name='calendar' size={18} color="#4e4b59"/>
+                                {focused ?
+                                    <FontAwesome5 name="calendar-check" size={22} color="#607EC5" />
+                                    :
+                                    <FontAwesome name='calendar' size={22} color='#4E4B59' />
+                                }
                                 {focused && <TextIcon>Agenda</TextIcon>}
                             </ContentIcon>
                         )
                     } else {
                         return (
                             <ContentIcon
-                                tabBarActiveBackgroundColor = {focused ? "#ecf2ff" : "transparent"}
+                                tabBarActiveBackgroundColor={focused ? "#ecf2ff" : "transparent"}
                             >
-                                <FontAwesome5 name='user-circle' size={22} color="#4e4b59"/>
+                                <FontAwesome5 name='user-circle' size={22} color={focused ? '#607EC5' : '#4E4B59'} />
                                 {focused && <TextIcon>Perfil</TextIcon>}
                             </ContentIcon>
                         )
@@ -46,8 +52,8 @@ export const Main = () => {
         >
 
             <BottomTab.Screen
-                name="DoctorSchedule"
-                component={DoctorSchedule}
+                name="Schedule"
+                component={check === 'DoctorSchedule' ? DoctorSchedule : PatientSchedule}
             />
 
 

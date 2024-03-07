@@ -1,6 +1,7 @@
 import { BoxInput } from "../../components/BoxInput/BoxInput";
 import { Container, ContainerInfo } from "../../components/Container/Style";
 import { DataInput } from "../../components/Input/Style";
+import { LinkSemiBold } from "../../components/Link/Style";
 import { AnotherPatientPhoto } from "../../components/Logo/Style";
 import { RandomInfo } from "../../components/Texts/Style";
 import { SubTitle, Title } from "../../components/Title/Style";
@@ -35,6 +36,11 @@ export const SeeLocation = ({ navigation }) => {
                     fieldWidth={45}
                 />
             </ViewFormat>
+
+            <LinkSemiBold
+                onPress={() => navigation.navigate("PatientSchedule")}
+            >Voltar</LinkSemiBold>
+
         </Container>
 
     );

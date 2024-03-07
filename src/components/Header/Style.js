@@ -11,7 +11,9 @@ export const ContainerHeader = styled(LinearGradient).attrs({
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 `
-export const ContainerBoxUser = styled.SafeAreaView`
+export const ContainerBoxUser = styled.TouchableOpacity.attrs({
+    activeOpacity: 1
+})`
     width: 163px;
     height: 60px;
     flex-direction: row;

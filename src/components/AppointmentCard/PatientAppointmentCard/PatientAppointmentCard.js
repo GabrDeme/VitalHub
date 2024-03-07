@@ -14,7 +14,7 @@ export const PatientAppointmentCard = ({
     type
 }) => {
     return (
-        <ContainerList2>
+        <ContainerList2 onPress={ situation == 'pendente' ? onPressAppointment : null}>
 
             <ProfileImage2 source={{ uri: "https://github.com/EduardoPasqualetti.png" }} />
 

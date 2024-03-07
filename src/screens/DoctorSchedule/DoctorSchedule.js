@@ -29,7 +29,7 @@ export const DoctorSchedule = ({ navigation }) => {
     return (
 
         <Container>
-            <Header />
+            <Header navigation={navigation}/>
             <CalendarList />
 
             <ContainerAlter>
