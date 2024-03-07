@@ -10,7 +10,7 @@ import { NewPassword } from './src/screens/NewPassword/NewPassword';
 import { Register } from './src/screens/Register/Register';
 import { Record } from './src/screens/Record/Record';
 import { Profile } from './src/screens/Profile/Profile';
-import { DoctorSchedule } from './src/screens/DoctorSchedule/DoctorSchedule';
+import { DoctorSchedule } from './src/screens/Schedule/Schedule';
 import { PatientSchedule } from './src/screens/PatientSchedule/PatientSchedule';
 import { ClinicSelect } from './src/screens/ClinicSelect/ClinicSelect';
 import { DoctorSelect } from './src/screens/DoctorSelect/DoctorSelect';
