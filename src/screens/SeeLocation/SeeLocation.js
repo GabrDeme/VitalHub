@@ -3,6 +3,7 @@ import { Container, ContainerInfo } from "../../components/Container/Style";
 import { DataInput } from "../../components/Input/Style";
 import { LinkSemiBold } from "../../components/Link/Style";
 import { AnotherPatientPhoto } from "../../components/Logo/Style";
+import Maps from "../../components/Maps/Maps";
 import { RandomInfo } from "../../components/Texts/Style";
 import { SubTitle, Title } from "../../components/Title/Style";
 import { BigImage, ViewFormat } from "./Style";
@@ -11,7 +12,9 @@ export const SeeLocation = ({ navigation }) => {
 
     return (
         <Container>
-            <BigImage source={require("../../assets/Location.png")} />
+            {/* <BigImage source={require("../../assets/Location.png")} /> */}
+
+            <Maps/>
 
             <Title>Clínica Natureh</Title>
             <ContainerInfo>
