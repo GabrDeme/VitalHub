@@ -11,10 +11,10 @@ export default function Maps() {
 
   const [initialPosition, setInitialPosition] = useState(null);
   const [finalPosition, setFinalPosition] = useState({
-    latitude: -23.6020,
-    longitude: -46.6721,
-    latitudeDelta: 0,
-    longitudeDelta: 0
+    latitude: -23.7326,
+    longitude: -46.5779,
+    latitudeDelta: 0.005,
+    longitudeDelta: 0.005
   })
 
   async function getInitialPosition() {
