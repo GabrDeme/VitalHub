@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Title } from "../../Title/Style";
 
-export const ContainerList = styled.View`
+export const ContainerList = styled.TouchableOpacity`
     width: 90%;
     margin-bottom: 12px;
     padding: 10px 10px;

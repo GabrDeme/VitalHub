@@ -31,7 +31,7 @@ export const DoctorSchedule = ({ navigation }) => {
     const [showModalDoctorInfo, setShowModalDoctorInfo] = useState(false)
     const [showModalToSchedule, setShowModalToSchedule] = useState(false)
 
-    const [profile, setProfile] = useState("Paciente");
+    const [profile, setProfile] = useState("Médico");
 
     return (
         <Container>
@@ -72,12 +72,12 @@ export const DoctorSchedule = ({ navigation }) => {
                             type={item.type}
                             onPressCancel={() => setShowModalCancel(true)}
                             onPressAppointment={() => setShowModalAppointment(true)}
+                            onPressPrescription={() => navigation.replace('Prescription')}
                         />
                     )
                 }
             />
             {profile === "Paciente" && (
-
                 <Stethoscope
                     onPress={() => setShowModalToSchedule(true)}
                 >

@@ -48,12 +48,12 @@ export default function Maps() {
       accuracy: LocationAccuracy.Highest,
       timeInterval: 1000,
       distanceInterval: 1
-    }, response => {
-      setInitialPosition(response.coords);
-      mapReference?.current.animateCamera({
-        pitch: 60,
-        center: response.coords
-      })
+    // }, response => {
+    //   setInitialPosition(response.coords);
+    //   mapReference?.current.animateCamera({
+    //     pitch: 60,
+    //     center: response.coords
+    //   })
     })
   }, [1000]);
 

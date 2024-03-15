@@ -23,6 +23,7 @@ const Stack = createNativeStackNavigator();
 import { useFonts, MontserratAlternates_700Bold, MontserratAlternates_600SemiBold, MontserratAlternates_500Medium } from "@expo-google-fonts/montserrat-alternates"
 import { Quicksand_400Regular, Quicksand_500Medium, Quicksand_600SemiBold } from "@expo-google-fonts/quicksand"
 import { Main } from './src/screens/Main/Main';
+import Camera from './src/components/Camera/Camera';
 
 export default function App() {
 
@@ -169,6 +170,8 @@ export default function App() {
           options={{title: 'Ver Prescrição do Médico'}}
           
           />
+
+
           
       </Stack.Navigator>
     </NavigationContainer>

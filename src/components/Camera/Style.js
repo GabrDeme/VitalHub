@@ -25,7 +25,7 @@ export const CaptureButton = styled.TouchableOpacity`
     margin: 20px;
     padding: 20px;
     border-radius: 15px;
-    background-color: #121212;
+    background-color: white;
 
     align-items: center;
     justify-content: center;
@@ -36,4 +36,7 @@ export const ImageModal = styled(ContainerCamera)`
 export const InsideButtons = styled(CaptureButton)`
     margin: 0px;
     background-color: transparent;
+`
+export const ContainerInsideButtons = styled.View`
+    flex-direction: row;
 `

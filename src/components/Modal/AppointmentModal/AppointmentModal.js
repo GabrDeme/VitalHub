@@ -31,7 +31,7 @@ export const AppointmentModal = ({
                         {age} anos    email
                     </ModalText>
 
-                    {situation !== "pendente" ? (
+                    {situation !== "Paciente" ? (
                         <ButtonModal onPress={ () => handleClose("Record") }>
                             <ButtonTitle>Inserir Prontuário</ButtonTitle>
                         </ButtonModal>

@@ -1,14 +1,15 @@
 import { StyleSheet, Text, TouchableOpacity, View, Image, Modal } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons'
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 import { Camera, CameraType } from 'expo-camera';
 import * as MediaLibrary from 'expo-media-library'
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { CaptureButton, ContainerCamera, FlipButton, FlipCamera, ImageModal, InsideButtons } from './Style';
+import { CaptureButton, ContainerCamera, ContainerInsideButtons, FlipButton, FlipCamera, ImageModal, InsideButtons } from './Style';
 
 import { useEffect, useState, useRef } from 'react';
 
 
-export default function Camera() {
+export const OpenCamera = ({ visibleCamera, type, onPressType, onPressExit }) => {
     const cameraRef = useRef(null)
     const [photo, setPhoto] = useState(null)
     const [openModal, setOpenModal] = useState(false)
@@ -51,40 +52,48 @@ export default function Camera() {
     }, [])
 
     return (
-        <ContainerCamera>
-            <Camera
-                ref={cameraRef}
-                type={cameraType}
-                style={styles.camera}
-                ratio={'16:9'}
-            >
-                <FlipCamera>
-                    <FlipButton onPress={() => setCameraType(cameraType == CameraType.front ? CameraType.back : CameraType.front)}>
-                        <MaterialCommunityIcons name="camera-flip" size={24} color="white" />
-                    </FlipButton>
-                </FlipCamera>
-            </Camera>
-            <CaptureButton>
-                <MaterialCommunityIcons name="pokeball" size={24} color="black" />
-            </CaptureButton>
+        <Modal
+            visible={visibleCamera}
+            animationType='slide'
+            transparent={false}
+        >
+            <ContainerCamera>
+                <Camera
+                    ref={cameraRef}
+                    type={cameraType}
+                    style={styles.camera}
+                    ratio={'16:9'}
+                >
+                    <FlipCamera>
+                        <FlipButton onPress={() => setCameraType(cameraType == CameraType.front ? CameraType.back : CameraType.front)}>
+                            <MaterialCommunityIcons name="camera-flip" size={24} color="white" />
+                        </FlipButton>
+                    </FlipCamera>
+                </Camera>
+                <CaptureButton onPress={() => CapturePhoto()}>
+                    <MaterialCommunityIcons name="pokeball" size={40} color="black" />
+                </CaptureButton>
 
-            <Modal animationType='slide' transparent={false} visible={openModal}>
-                <ImageModal>
-                    <Image
-                        style={{ width: '100%', height: 500, borderRadius: 10 }}
-                        source={{ uri: photo }}
-                    />
-                    <InsideButtons>
-                        <FontAwesome name='trash' size={35} color={'#ff0000'} onPress={() => ClearPhoto()} />
-                    </InsideButtons>
-                    <InsideButtons>
-                        <FontAwesome name='save' size={35} color={'#121212'} onPress={() => SavePhoto()} />
-                    </InsideButtons>
-                </ImageModal>
-            </Modal>
+                <Modal animationType='slide' transparent={false} visible={openModal}>
+                    <ImageModal>
+                        <Image
+                            style={{ width: '100%', height: 500, borderRadius: 10 }}
+                            source={{ uri: photo }}
+                        />
+                        <ContainerInsideButtons>
+                            <InsideButtons>
+                                <FontAwesome name='trash' size={35} color={'#ff0000'} onPress={() => ClearPhoto()} />
+                            </InsideButtons>
+                            <InsideButtons>
+                                <FontAwesome name='save' size={33} color={'#121212'} onPress={() => SavePhoto()} />
+                            </InsideButtons>
+                        </ContainerInsideButtons>
+                    </ImageModal>
+                </Modal>
 
-        </ContainerCamera>
-    )
+            </ContainerCamera>
+        </Modal>
+    );
 }
 const styles = StyleSheet.create({
     camera: {

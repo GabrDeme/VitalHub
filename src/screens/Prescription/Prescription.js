@@ -10,8 +10,11 @@ import { EnterButton } from "../../components/Button/Style";
 import { LinkSemiBold } from "../../components/Link/Style";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { ButtonCard, ButtonText } from "../../components/AppointmentCard/DoctorAppointmentCard/Style";
+import { OpenCamera } from "../../components/Camera/Camera";
+import { useState } from "react";
 
 export const Prescription = ({ navigation }) => {
+    const [openCamera, setOpenCamera] = useState(false);
     return (
 
         <ScrollView>
@@ -45,13 +48,18 @@ export const Prescription = ({ navigation }) => {
 
                 <ViewInsertPhoto>
 
-                    <ButtonInsertPhoto>
+                    <ButtonInsertPhoto onPress={() => setOpenCamera(true)}>
                         <MaterialCommunityIcons name="camera-plus-outline" size={26} color="white" />
                         <ButtonTitle>Enviar</ButtonTitle>
                     </ButtonInsertPhoto>
                     <RedLinkBold>Cancelar</RedLinkBold>
 
                 </ViewInsertPhoto>
+
+                <OpenCamera
+                    visibleCamera={openCamera}
+                    onPressExit={() => setOpenCamera(false)}
+                />
 
                 <Line />
 

@@ -5,13 +5,15 @@ export const DoctorAppointmentCard = ({
     situation = "pendente",
     onPressCancel,
     onPressAppointment,
+    navigation,
+    onPressPrescription,
     name, 
     age,
     hour,
     type
 }) => {
     return (
-        <ContainerList>
+        <ContainerList  onPress={onPressAppointment}>
 
             <ProfileImage source={{ uri: "https://github.com/GustavoPasqualetti.png" }} />
 
@@ -42,7 +44,7 @@ export const DoctorAppointmentCard = ({
                                 <ButtonText situation={situation}>Cancelar</ButtonText>
                             </ButtonCard>
                         ) : (
-                            <ButtonCard onPress={onPressAppointment}>
+                            <ButtonCard onPress={onPressPrescription}>
                                 <ButtonText situation={situation}>Ver Prontuário</ButtonText>
                             </ButtonCard>
                         ) 
