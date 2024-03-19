@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { ButtonCard, ButtonText, ClockCard, ContainerList, ContentCard, DataProfileCard, ProfileData, ProfileImage, ProfileName, TextAge, TextBold, ViewRow } from './Style';
 import { AntDesign } from '@expo/vector-icons';
 
@@ -7,15 +8,25 @@ export const DoctorAppointmentCard = ({
     onPressAppointment,
     navigation,
     onPressPrescription,
-    name, 
+    name,
     age,
     hour,
     type
 }) => {
-    return (
-        <ContainerList  onPress={onPressAppointment}>
 
-            <ProfileImage source={{ uri: "https://github.com/GustavoPasqualetti.png" }} />
+    const [profile, setProfile] = useState("Medico");
+
+    return (
+        <ContainerList onPress={onPressAppointment}>
+
+            {
+                profile == "Paciente" ? (
+                    <ProfileImage source={{ uri: "https://github.com/Carlos-Augusto-Roque.png" }} />
+
+                ) : (
+                    <ProfileImage source={{ uri: "https://github.com/eduardocostaprofessor.png" }} />
+                )
+            }
 
             <ContentCard>
                 <DataProfileCard>
@@ -31,7 +42,7 @@ export const DoctorAppointmentCard = ({
 
                 <ViewRow>
                     <ClockCard situation={situation}>
-                        <AntDesign name="clockcircle" size={14} marginTop={2} color= {situation == "pendente" ? "#49B3BA" : "#4E4B59"}/>
+                        <AntDesign name="clockcircle" size={14} marginTop={2} color={situation == "pendente" ? "#49B3BA" : "#4E4B59"} />
                         <TextBold>{hour}</TextBold>
                     </ClockCard>
 
@@ -47,7 +58,7 @@ export const DoctorAppointmentCard = ({
                             <ButtonCard onPress={onPressPrescription}>
                                 <ButtonText situation={situation}>Ver Prontuário</ButtonText>
                             </ButtonCard>
-                        ) 
+                        )
                     }
 
                 </ViewRow>

@@ -1,6 +1,7 @@
 import { StyleSheet, Text, TouchableOpacity, View, Image, Modal } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { Camera, CameraType } from 'expo-camera';
 import * as MediaLibrary from 'expo-media-library'
@@ -69,6 +70,11 @@ export const OpenCamera = ({ visibleCamera, type, onPressType, onPressExit }) =>
                             <MaterialCommunityIcons name="camera-flip" size={24} color="white" />
                         </FlipButton>
                     </FlipCamera>
+                    {/* <FlipCamera>
+                        <FlipButton onPressExit={() => setOpenCamera(false)}>
+                            <AntDesign name="closecircle" size={24} color="white" />
+                        </FlipButton>
+                    </FlipCamera> */}
                 </Camera>
                 <CaptureButton onPress={() => CapturePhoto()}>
                     <MaterialCommunityIcons name="pokeball" size={40} color="black" />

@@ -38,7 +38,7 @@ export const ConfirmationModal = ({
                         text={'Rotina'}
                     />
 
-                    <ButtonModal onPress={() => navigation.navigate("PatientSchedule")}>
+                    <ButtonModal onPress={() => navigation.navigate("DoctorSchedule")}>
                         <ButtonTitle>Confirmar</ButtonTitle>
                     </ButtonModal>
 

@@ -22,13 +22,15 @@ export const ContainerAlter = styled.View`
     gap: 18px;
 `
 export const Stethoscope = styled.TouchableOpacity`
+    position: fixed;
     height: 60px;
     width: 60px;
-    align-self: flex-end;
     margin-bottom: 14px;
     margin-right: 21px;
     background-color: #49B3BA;
     border-radius: 5px;
     justify-content: center;
     align-items: center;
+    align-self: flex-end;
+    z-index: 1000;
 `

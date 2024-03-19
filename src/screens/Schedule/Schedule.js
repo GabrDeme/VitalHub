@@ -15,12 +15,13 @@ import { ToScheduleModal } from "../../components/Modal/ToScheduleModal/ToSchedu
 import { DoctorInfoModal } from "../../components/Modal/DoctorInfoModal/DoctorInfoModal";
 
 const Consultas = [
-    { id: 1, name: "Eduardo", age: 18, hour: '12:00', situation: "pendente", type: "Rotina" },
-    { id: 2, name: "Gustavo", age: 18, hour: '12:30', situation: "realizadas", type: "Rotina" },
-    { id: 3, name: "Marcelo", age: 19, hour: '13:00', situation: "canceladas", type: "Urgência" },
-    { id: 4, name: "Marcio", age: 29, hour: '14:00', situation: "pendente", type: "Rotina" },
-    { id: 5, name: "Jao", age: 19, hour: '18:00', situation: "realizadas", type: "Urgência" },
-    { id: 6, name: "Gabriel", age: 16, hour: '13:30', situation: "pendente", type: "Rotina" }
+    { id: 1, name: "Cachorro", age: 19, hour: '13:00', situation: "canceladas", type: "Urgência", profile: "Medico" },
+    { id: 2, name: "Marmita", age: 19, hour: '18:00', situation: "realizadas", type: "Urgência", profile: "Medico" },
+    { id: 3, name: "Gabriel", age: 16, hour: '13:30', situation: "pendente", type: "Rotina", profile: "Medico" },
+
+    // { id: 4, name: "Dr. Francisco", age: 48, hour: '14:00', situation: "pendente", type: "Rotina", profile: "Paciente" },
+    // { id: 5, name: "Dr. Marcos", age: 30, hour: '12:30', situation: "realizadas", type: "Urgência", profile: "Paciente" },
+    // { id: 6, name: "Dr. Francisco", age: 48, hour: '14:00', situation: "canceladas", type: "Rotina", profile: "Paciente" }
 ]
 
 export const DoctorSchedule = ({ navigation }) => {
@@ -31,7 +32,7 @@ export const DoctorSchedule = ({ navigation }) => {
     const [showModalDoctorInfo, setShowModalDoctorInfo] = useState(false)
     const [showModalToSchedule, setShowModalToSchedule] = useState(false)
 
-    const [profile, setProfile] = useState("Médico");
+    const [profile, setProfile] = useState("Medico");
 
     return (
         <Container>
